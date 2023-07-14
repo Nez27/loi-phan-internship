@@ -1,0 +1,6 @@
+$sofia-pro-font-path: "../assets/fonts";
+
+@font-face {
+  src: url("#{$sofia-pro-font-path}/Sofia_Pro_Regular.otf") format("opentype");
+  font-family: "Sofia Pro";
+}

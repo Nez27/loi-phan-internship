@@ -1,0 +1,13 @@
+@mixin base-icon-menu {
+  height: 4px;
+  background: #000000;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+@mixin icon-menu {
+  @include base-icon-menu;
+  content: "";
+  position: absolute;
+  right: 0;
+}

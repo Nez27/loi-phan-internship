@@ -1,0 +1,140 @@
+.icon-menu {
+  @include base-icon-menu;
+
+  position: relative;
+  top: 27px;
+  width: 36px;
+  cursor: pointer;
+
+  &:before {
+    @include icon-menu;
+    top: -10px;
+    width: 36px;
+  }
+
+  &:after {
+    @include icon-menu;
+    top: 10px;
+    width: 36px;
+  }
+}
+
+.toggle-menu {
+  position: absolute;
+  top: 40px;
+  width: 36px;
+  height: 27px;
+  z-index: 1;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.toggle-menu:checked ~ .icon-menu {
+  background: transparent;
+}
+
+.toggle-menu:checked ~ .icon-menu:before {
+  top: 0;
+  transform: rotate(-45deg);
+  width: 30px;
+}
+
+.toggle-menu:checked ~ .icon-menu:after {
+  top: 0;
+  transform: rotate(45deg);
+  width: 30px;
+}
+
+.toggle-menu:checked ~ .nav-list {
+  right: 0px;
+}
+
+.btn {
+  display: none;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  transition: 0.1s;
+  flex-direction: column;
+  position: fixed;
+  border: 2px solid #f54748;
+  top: 0px;
+  right: -300px;
+  width: 200px;
+  height: 180px;
+  border-radius: 10px;
+  margin-top: 80px;
+  margin-right: 10px;
+}
+
+.nav-item {
+  font-size: 14px;
+  padding: 14px;
+  border-bottom: 1px solid #fdc55e;
+
+  &:last-child {
+    border-bottom: unset;
+  }
+}
+
+.header {
+  position: relative;
+  display: flex;
+  gap: 0px;
+  justify-content: space-between;
+  width: 100%;
+  max-width: $max-width;
+  padding: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    padding-top: 32px;
+    padding-inline: 24px;
+    margin: auto;
+  }
+
+  .icon-menu,
+  .toggle-menu {
+    display: none;
+  }
+
+  .logo-wrapper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .nav {
+    margin: auto;
+    width: 100%;
+  }
+
+  .nav-list {
+    position: unset;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: flex-start;
+    border: none;
+    height: auto;
+    gap: 50px;
+    margin: 0px;
+    width: max-content;
+  }
+
+  .nav-item {
+    border-bottom: none;
+    padding: 0px;
+  }
+
+  .btn {
+    display: block;
+  }
+}
