@@ -62,23 +62,27 @@
   list-style: none;
   transition: 0.1s;
   position: fixed;
-  border: 2px solid #f54748;
+  border: 2px solid $primary-color;
   top: 0px;
   right: -300px;
   width: auto;
   height: auto;
-  border-radius: 10px;
   margin-top: 80px;
   margin-right: 10px;
+  z-index: 2;
 }
 
 .nav-item {
   font-size: 14px;
   padding: 14px;
-  border-bottom: 1px solid #fdc55e;
+  border-bottom: 1px solid $black;
 
   &:last-child {
     border-bottom: unset;
+  }
+
+  &:hover {
+    background-color: $secondary-color;
   }
 }
 
@@ -129,10 +133,23 @@
   .nav-item {
     border-bottom: none;
     padding: 0px;
+
+    &:hover {
+      background-color: unset;
+    }
+  }
+
+  .nav-link:hover {
+    color: $secondary-color;
   }
 
   .btn {
     display: block;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: $secondary-color;
+    }
   }
 }
 
