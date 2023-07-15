@@ -8,15 +8,20 @@ html(lang="en")
   body
     header.header
       .logo-wrapper 
-        img(src="./assets/images/Logo.png", alt="Logo image").logo
+        a(href="javascript:void(0)") 
+          img(src="./assets/images/Logo.png", alt="Logo image").logo
       .header-content
         nav.nav
           input(type="checkbox").toggle-menu
           .icon-menu 
           ul.nav-list
-            li.nav-item Today Special Offers 
-            li.nav-item Why FoodHut
-            li.nav-item Our Menu 
-            li.nav-item Our Popular Food
+            li.nav-item 
+              a(href="javascrip:void(0)").nav-link Today Special Offers
+            li.nav-item 
+              a(href="javascrip:void(0)").nav-link Why FoodHut
+            li.nav-item 
+              a(href="javascrip:void(0)").nav-link Our Menu
+            li.nav-item 
+              a(href="javascrip:void(0)").nav-link Our Popular Food
         a(href="javascript:void(0)").btn Download App
       

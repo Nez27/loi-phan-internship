@@ -19,13 +19,18 @@
   }
 }
 
+.logo-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
 .toggle-menu {
   position: absolute;
   top: 40px;
   width: 36px;
   height: 27px;
-  z-index: 1;
   cursor: pointer;
+  z-index: 1;
   opacity: 0;
 }
 
@@ -55,15 +60,13 @@
 
 .nav-list {
   list-style: none;
-  display: flex;
   transition: 0.1s;
-  flex-direction: column;
   position: fixed;
   border: 2px solid #f54748;
   top: 0px;
   right: -300px;
-  width: 200px;
-  height: 180px;
+  width: auto;
+  height: auto;
   border-radius: 10px;
   margin-top: 80px;
   margin-right: 10px;
@@ -79,12 +82,15 @@
   }
 }
 
+.nav-link {
+  text-decoration: none;
+  color: $black;
+}
+
 .header {
   position: relative;
   display: flex;
-  gap: 0px;
   justify-content: space-between;
-  width: 100%;
   max-width: $max-width;
   padding: 24px;
 }
@@ -94,6 +100,7 @@
     padding-top: 32px;
     padding-inline: 24px;
     margin: auto;
+    gap: 10px;
   }
 
   .icon-menu,
@@ -101,32 +108,22 @@
     display: none;
   }
 
-  .logo-wrapper {
-    width: 100%;
-    height: 100%;
-  }
-
   .header-content {
     display: flex;
-    justify-content: space-between;
-    gap: 10px;
+    gap: 96px;
+    width: 150%;
   }
 
   .nav {
     margin: auto;
-    width: 100%;
   }
 
   .nav-list {
     position: unset;
-    display: inline-flex;
-    flex-direction: row;
-    align-items: flex-start;
-    border: none;
-    height: auto;
+    display: flex;
     gap: 50px;
-    margin: 0px;
-    width: max-content;
+    border: none;
+    margin: 0;
   }
 
   .nav-item {
@@ -136,5 +133,11 @@
 
   .btn {
     display: block;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header-content {
+    gap: 96px;
   }
 }
