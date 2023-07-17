@@ -1,1 +1,20 @@
-@import "./base/reset.scss";
+// Abstracts
+@import "./abstracts/mixins";
+@import "./abstracts/variables";
+
+// Bases
+@import "./bases/typography";
+@import "./bases/reset.scss";
+
+// Components
+@import "./components/button";
+@import "./components/menu-button";
+@import "./components/logo";
+
+// Layouts
+@import "./layouts/navbar";
+@import "./layouts/header";
+
+* {
+  font-family: $primary-font;
+}

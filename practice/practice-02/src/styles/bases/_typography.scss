@@ -1,0 +1,11 @@
+$font-path: "../assets/fonts";
+
+@font-face {
+  src: url("#{$font-path}/sofia-pro-regular.otf") format("opentype");
+  font-family: "Sofia Pro";
+}
+
+@font-face {
+  src: url("#{$font-path}/inter-regular.ttf") format("truetype");
+  font-family: "Inter";
+}

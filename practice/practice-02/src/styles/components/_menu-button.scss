@@ -1,0 +1,57 @@
+.icon-menu {
+  @include base-icon-menu;
+
+  position: relative;
+  top: 27px;
+  width: 36px;
+  cursor: pointer;
+
+  &:before {
+    @include icon-menu;
+
+    top: -10px;
+    width: 36px;
+  }
+
+  &:after {
+    @include icon-menu;
+
+    top: 10px;
+    width: 36px;
+  }
+}
+
+.toggle-menu {
+  position: absolute;
+  top: 40px;
+  width: 36px;
+  height: 27px;
+  cursor: pointer;
+  z-index: 1;
+  opacity: 0;
+}
+
+.toggle-menu:checked ~ .icon-menu {
+  background: transparent;
+}
+
+.toggle-menu:checked ~ .icon-menu:before {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.toggle-menu:checked ~ .icon-menu:after {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.toggle-menu:checked ~ .nav-list {
+  right: 0px;
+}
+
+@media screen and (min-width: 840px) {
+  .icon-menu,
+  .toggle-menu {
+    display: none;
+  }
+}
