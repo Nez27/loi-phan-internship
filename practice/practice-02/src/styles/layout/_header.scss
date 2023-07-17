@@ -1,0 +1,26 @@
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  max-width: $max-width;
+  min-width: $min-width;
+  padding: 24px;
+  margin: auto;
+}
+
+@media screen and (min-width: 840px) {
+  .header {
+    padding-top: 32px;
+    padding-inline: 24px;
+    gap: 10px;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    max-width: 918px;
+    height: auto;
+  }
+}

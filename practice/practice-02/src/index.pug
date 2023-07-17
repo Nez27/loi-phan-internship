@@ -1,25 +1,14 @@
-include nav-item
-
 doctype html
 html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    link(rel="stylesheet", href="./sass/main.scss")
+    link(rel="stylesheet", href="./styles/main.scss")
     title Food Hut
   body
     header.header
-      .logo-wrapper 
-        a(href="javascript:void(0)") 
-          img(src="./assets/images/Logo.png", alt="Logo image").logo
+      .logo-wrapper
+        a.logo-link(href="javascript:void(0)")
+          img.logo(src="./assets/images/logo.svg", alt="Food Hut logo")
       .header-content
-        nav.nav
-          input(type="checkbox").toggle-menu
-          .icon-menu 
-          ul.nav-list
-            +navItem("Today Special Offers")
-            +navItem("Why FoodHut")
-            +navItem("Our Menu")
-            +navItem("Our Popular Food")
-        a(href="javascript:void(0)").btn Download App
-      
+        include nav-menu
