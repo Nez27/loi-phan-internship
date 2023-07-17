@@ -41,13 +41,11 @@
 .toggle-menu:checked ~ .icon-menu:before {
   top: 0;
   transform: rotate(-45deg);
-  width: 30px;
 }
 
 .toggle-menu:checked ~ .icon-menu:after {
   top: 0;
   transform: rotate(45deg);
-  width: 30px;
 }
 
 .toggle-menu:checked ~ .nav-list {
