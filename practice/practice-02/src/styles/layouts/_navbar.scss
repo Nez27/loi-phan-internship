@@ -3,7 +3,7 @@
   transition: 0.1s;
   position: fixed;
   border: 2px solid $primary-color;
-  top: 0px;
+  top: 0;
   right: -300px;
   width: auto;
   height: auto;
@@ -14,8 +14,12 @@
   background-color: $white;
 }
 
+.nav-download-btn {
+  display: none;
+}
+
 .nav-item {
-  font-size: 14px;
+  font-size: $fs-xx-sm;
   padding: 14px;
   border-bottom: 1px solid $black;
 
@@ -40,6 +44,14 @@
     height: auto;
   }
 
+  .nav-download-btn {
+    display: block;
+
+    &:hover {
+      background-color: $secondary-color;
+    }
+  }
+
   .nav-list {
     position: unset;
     display: flex;
@@ -51,7 +63,7 @@
 
   .nav-item {
     border-bottom: none;
-    padding: 0px;
+    padding: 0;
 
     &:hover {
       background-color: unset;

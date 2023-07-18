@@ -9,17 +9,3 @@
   white-space: nowrap;
   transition: 0.2s;
 }
-
-.nav-download-btn {
-  display: none;
-}
-
-@media screen and (min-width: 840px) {
-  .nav-download-btn {
-    display: block;
-
-    &:hover {
-      background-color: $secondary-color;
-    }
-  }
-}
