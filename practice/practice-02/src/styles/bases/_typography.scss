@@ -1,12 +1,12 @@
 $font-path: "../assets/fonts";
 
 @font-face {
-  src: url("#{$font-path}/sofia-pro-regular.otf") format("opentype");
+  src: url("#{$font-path}/sofia-pro-regular.woff2") format("woff2");
   font-family: "Sofia Pro";
 }
 
 @font-face {
-  src: url("#{$font-path}/inter-regular.ttf") format("truetype");
+  src: url("#{$font-path}/inter-regular.woff2") format("woff2");
   font-family: "Inter";
 }
 
