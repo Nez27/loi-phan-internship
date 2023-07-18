@@ -9,3 +9,7 @@ $font-path: "../assets/fonts";
   src: url("#{$font-path}/inter-regular.ttf") format("truetype");
   font-family: "Inter";
 }
+
+* {
+  font-family: $primary-font;
+}
