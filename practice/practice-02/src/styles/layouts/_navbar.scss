@@ -1,4 +1,5 @@
 .nav-list {
+  flex-direction: column;
   list-style: none;
   transition: 0.1s;
   position: fixed;
@@ -54,7 +55,7 @@
 
   .nav-list {
     position: unset;
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     border: none;
     margin: auto;

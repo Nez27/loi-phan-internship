@@ -1,6 +1,5 @@
 .header {
   position: relative;
-  display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: $max-width;
@@ -17,7 +16,6 @@
   }
 
   .header-content {
-    display: flex;
     justify-content: space-between;
     gap: 10px;
     width: 100%;
