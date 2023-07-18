@@ -1,28 +1,31 @@
+$width-icon-menu: 36px;
+
 .icon-menu {
   @include base-icon-menu;
 
   position: relative;
-  width: 36px;
+  width: $width-icon-menu;
   cursor: pointer;
 
   &:before {
     @include icon-menu;
 
     top: -10px;
-    width: 36px;
+    width: $width-icon-menu;
   }
 
   &:after {
     @include icon-menu;
 
     top: 10px;
-    width: 36px;
+    width: $width-icon-menu;
   }
 }
 
 .toggle-menu {
   position: absolute;
-  top: 40px;
+  top: 46px;
+  right: 21px;
   width: 36px;
   height: 27px;
   cursor: pointer;

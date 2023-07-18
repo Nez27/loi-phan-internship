@@ -6,12 +6,9 @@
   border: 2px solid $primary-color;
   top: 0;
   right: -300px;
-  width: auto;
-  height: auto;
   margin-top: 105px;
   margin-right: 10px;
   margin-left: 10px;
-  z-index: 2;
   background-color: $white;
 }
 
@@ -34,15 +31,12 @@
 }
 
 .nav-link {
-  text-decoration: none;
   color: $black;
 }
 
 @media screen and (min-width: 840px) {
   .nav {
-    margin: auto;
     width: 100%;
-    height: auto;
   }
 
   .nav-download-btn {
@@ -56,10 +50,9 @@
   .nav-list {
     position: unset;
     flex-direction: row;
-    justify-content: space-between;
     border: none;
-    margin: auto;
     max-width: 600px;
+    margin: unset;
   }
 
   .nav-item {
