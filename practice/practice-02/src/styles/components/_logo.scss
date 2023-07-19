@@ -1,0 +1,11 @@
+.logo-wrapper {
+  @include size(121px, 78px);
+
+  flex-shrink: 0;
+}
+
+.logo-link {
+  @include size(100%, 100%);
+
+  display: inline-block;
+}
