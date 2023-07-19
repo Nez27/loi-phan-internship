@@ -1,0 +1,37 @@
+.welcome__content
+  .welcome__orange-image-wrapper
+    img(src=welcome_img_path + "orange.png", alt="Orange background image")
+  .welcome__text-box
+    .welcome__icon-container
+      img.welcome__love-icon(
+        src=welcome_img_path + "love-icon.png",
+        alt="Love icon"
+      )
+    p.welcome__text-box-content People Trust us
+  h1.welcome__heading We're
+    = " "
+    mark serious
+    = " for "
+    mark food
+    = " & "
+    mark delivery
+    = "."
+  p.welcome__description Best cooks and best delivery guys all at your service. Hot tasty food will reach you in 60 minutes.
+  form.welcome__search-form(action="#")
+    .welcome__search-icon-wrapper
+      img.welcome__search-icon(
+        src=welcome_img_path + "search-icon.png",
+        alt="Search icon"
+      )
+    input.welcome__text-input(type="text")
+    .welcome__button-icon-wrapper
+      button.welcome__submit-btn(type="submit")
+        img.welcome__search-icon-btn(
+          src=welcome_img_path + "search-icon-btn.svg",
+          alt="Search button image"
+        )
+  a.btn(href="javascript:void(0)") Download App
+  a.welcome__watch-video-button(href="javascript:void(0)")
+    .welcome__watch-video-wrapper
+      img(src=welcome_img_path + "play-btn.png", alt="Watch button image")
+    p Watch Video

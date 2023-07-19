@@ -1,3 +1,5 @@
+- var welcome_img_path = "./assets/images/welcome/";
+
 doctype html
 html(lang="en")
   head
@@ -6,9 +8,14 @@ html(lang="en")
     link(rel="stylesheet", href="./styles/main.scss")
     title Food Hut
   body
-    header.header.flex
-      .logo-wrapper
-        a.logo-link(href="javascript:void(0)")
-          img.logo(src="./assets/images/logo.svg", alt="Food Hut logo")
-      .header-content.flex
-        include layouts/nav/nav-menu
+    .background
+      header.header.flex
+        .logo-wrapper
+          a.logo-link(href="javascript:void(0)")
+            img.logo(src="./assets/images/logo.svg", alt="Food Hut logo")
+        .header-content.flex
+          include layouts/nav-menu
+      section.welcome
+        include layouts/welcome/banner
+        include layouts/welcome/content
+        img(src=welcome_img_path + "slider.png", alt="Slider image")
