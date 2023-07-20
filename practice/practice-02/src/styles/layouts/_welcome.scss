@@ -1,5 +1,7 @@
 .welcome {
   @include flex-container(center, column);
+  margin: auto;
+  max-width: 428px;
 
   // Start banner css code
   &__banner-container {
@@ -7,18 +9,16 @@
     @include flex-container(center, column);
 
     position: relative;
-    margin: auto;
-    max-width: 428px;
+    padding: 0 14px;
   }
 
   &__banner-image {
-    @include size(auto, auto);
-
     z-index: 1;
   }
 
   &__lines-background {
-    @include setAbsoluteAndLocation($top: -100px, $right: 0);
+    @include setAbsoluteAndLocation($top: -76px, $right: 0);
+    @include size(187px, 430px);
   }
 
   &__arrow-image {
@@ -35,16 +35,15 @@
   // Start content css code
   &__content {
     @include flex-container($flex-direction: column);
+    @include size(calc(428px - 48px), auto);
 
     position: relative;
-    padding-top: 68.48px;
-    padding-left: 33px;
-    max-width: 380px;
-    margin: auto;
+    padding-top: 63.37px;
+    padding-inline: 24px;
   }
 
   &__orange-image-wrapper {
-    @include setAbsoluteAndLocation($top: 0, $right: 0);
+    @include setAbsoluteAndLocation($top: 0, $right: 35px);
   }
 
   &__text-box {
@@ -55,11 +54,18 @@
     border-radius: 100px;
     padding: 6px;
     font-size: $fs-xx-sm;
+  }
+
+  &__text-box-content {
     font-family: $secondary-font;
   }
 
   &__icon-container {
     @include size(20px, 20px);
+  }
+
+  &__love-icon {
+    @include size(100%, 100%);
   }
 
   &__head-arrow-container {
@@ -102,9 +108,12 @@
   &__text-input {
     @include size(100%, auto);
 
-    padding: 15px 0;
     font-size: $fs-md;
     border: none;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   &__submit-btn {
@@ -114,18 +123,67 @@
     border-radius: 100px;
     border: none;
     padding: 9px;
-    margin: 6px 4px;
+    margin: 5px 4px;
     cursor: pointer;
   }
 
   &__action-container {
-    @include flex-container();
+    @include flex-container($gap: 31px);
     margin-top: 44px;
+  }
+
+  &__watch-video-link {
+    @include flex-container($align-items: center, $gap: 21px);
+
+    color: $gray;
+    font-size: $fs-sm;
+  }
+
+  &__play-icon-wrapper {
+    padding: 25px;
+    border-radius: 50%;
+    background-color: $white;
+    box-shadow: 0 40px 50px 3px rgba($color: $primary-color, $alpha: 0.5);
   }
 
   &__slider-container {
     @include size(22px, 61px);
 
     display: none;
+  }
+  // End content css code
+}
+
+@media screen and (min-width: 840px) {
+  .welcome {
+    @include flex-container(
+      $flex-direction: row-reverse,
+      $align-items: center,
+      $justify-content: space-between
+    );
+
+    padding-top: 20px;
+    width: 100%;
+    max-width: $max-width;
+
+    &__banner-image {
+      @include size(100%, 100%);
+
+      max-width: 689px;
+    }
+
+    &__banner-container {
+      @include size(auto, auto);
+
+      padding-right: 74px;
+      max-width: 1000px;
+    }
+
+    &__content {
+      @include size(auto, auto);
+      padding-left: 70px;
+      padding-right: 0px;
+      max-width: 440px;
+    }
   }
 }
