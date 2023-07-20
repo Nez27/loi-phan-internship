@@ -2,9 +2,10 @@
   @include flex-container(space-between, null, center);
 
   position: relative;
-  max-width: $max-width;
+  max-width: 428px;
   min-width: $min-width;
   padding: 24px;
+  margin: auto;
 }
 
 .header-content {
@@ -16,6 +17,7 @@
     padding-top: 32px;
     padding-inline: 24px;
     gap: 10px;
+    max-width: $max-width;
   }
 
   .header-content {

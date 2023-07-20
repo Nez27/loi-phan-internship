@@ -1,0 +1,131 @@
+.welcome {
+  @include flex-container(center, column);
+
+  // Start banner css code
+  &__banner-container {
+    @include size(428px, auto);
+    @include flex-container(center, column);
+
+    position: relative;
+    margin: auto;
+    max-width: 428px;
+  }
+
+  &__banner-image {
+    @include size(auto, auto);
+
+    z-index: 1;
+  }
+
+  &__lines-background {
+    @include setAbsoluteAndLocation($top: -100px, $right: 0);
+  }
+
+  &__arrow-image {
+    @include setAbsoluteAndLocation($top: -15px, $right: 50px);
+
+    @include size(43px, 215px);
+  }
+
+  &__mint-image {
+    @include setAbsoluteAndLocation($bottom: 100px, $right: 0);
+  }
+  // End banner css code
+
+  // Start content css code
+  &__content {
+    @include flex-container($flex-direction: column);
+
+    position: relative;
+    padding-top: 68.48px;
+    padding-left: 33px;
+    max-width: 380px;
+    margin: auto;
+  }
+
+  &__orange-image-wrapper {
+    @include setAbsoluteAndLocation($top: 0, $right: 0);
+  }
+
+  &__text-box {
+    @include flex-container($align-items: center, $gap: 6px);
+    @include size(fit-content);
+
+    background-color: #feeae9;
+    border-radius: 100px;
+    padding: 6px;
+    font-size: $fs-xx-sm;
+    font-family: $secondary-font;
+  }
+
+  &__icon-container {
+    @include size(20px, 20px);
+  }
+
+  &__head-arrow-container {
+    @include size(13px, 7.3px);
+    @include setAbsoluteAndLocation($right: 107px);
+  }
+
+  &__heading {
+    margin-top: 20px;
+    font-size: $fs-x-lg;
+    text-transform: capitalize;
+    font-weight: 900;
+  }
+
+  &__underline-image-container {
+    margin-top: 12px;
+  }
+
+  &__description {
+    margin-top: 35px;
+    font-size: $fs-x-md;
+    line-height: 140%;
+    letter-spacing: -0.2px;
+  }
+
+  &__search-form {
+    @include flex-container();
+
+    margin-top: 32px;
+    border-radius: 100px;
+    border: 0.5px solid $black;
+  }
+
+  &__search-icon-wrapper {
+    @include size(24px, 24px);
+
+    padding: 14px;
+  }
+
+  &__text-input {
+    @include size(100%, auto);
+
+    padding: 15px 0;
+    font-size: $fs-md;
+    border: none;
+  }
+
+  &__submit-btn {
+    @include size(42px, 42px);
+
+    background-color: #fdc55e;
+    border-radius: 100px;
+    border: none;
+    padding: 9px;
+    margin: 6px 4px;
+    cursor: pointer;
+  }
+
+  &__action-container {
+    @include flex-container();
+    margin-top: 44px;
+  }
+
+  &__slider-container {
+    @include size(22px, 61px);
+
+    display: none;
+  }
+}
