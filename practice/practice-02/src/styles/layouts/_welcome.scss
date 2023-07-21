@@ -9,7 +9,6 @@
     @include flex-container(center, column);
 
     position: relative;
-    padding: 0 14px;
   }
 
   &__banner-image {
@@ -125,6 +124,11 @@
     padding: 9px;
     margin: 5px 4px;
     cursor: pointer;
+
+    &:hover {
+      background-color: #f7d699;
+      transition: 0.2s;
+    }
   }
 
   &__action-container {
@@ -135,23 +139,55 @@
   &__watch-video-link {
     @include flex-container($align-items: center, $gap: 21px);
 
-    color: $gray;
-    font-size: $fs-sm;
+    position: relative;
+
+    &:hover {
+      .welcome__play-icon-wrapper {
+        width: 100%;
+        background-color: $secondary-color;
+      }
+
+      .welcome__text-download-btn {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &__play-icon {
+    color: $primary-color;
   }
 
   &__play-icon-wrapper {
-    padding: 25px;
-    border-radius: 50%;
+    @include size(12px, 17px);
+    position: absolute;
+    padding: 17.5px 20px;
+    border-radius: 50px;
     background-color: $white;
     box-shadow: 0 40px 50px 3px rgba($color: $primary-color, $alpha: 0.5);
+    transition: width 0.5s;
+  }
+
+  &__text-download-btn {
+    color: $gray;
+    font-size: $fs-sm;
+    margin-left: 70px;
+    transition: 0.5s;
+    z-index: 1;
+  }
+
+  &__download-btn:hover {
+    background-color: $secondary-color;
+    transition: 0.2s;
   }
 
   &__slider-container {
-    @include size(22px, 61px);
-
     display: none;
   }
   // End content css code
+}
+
+.slider-container {
+  display: none;
 }
 
 @media screen and (min-width: 840px) {
@@ -166,24 +202,64 @@
     width: 100%;
     max-width: $max-width;
 
+    // Start banner
     &__banner-image {
       @include size(100%, 100%);
 
       max-width: 689px;
     }
 
+    &__lines-background {
+      @include setAbsoluteAndLocation($top: -150px, $right: 0px);
+      @include size(313px, 718px);
+    }
+
+    &__arrow-image {
+      @include size(117px, 315px);
+      @include setAbsoluteAndLocation($top: -40px, $right: 5px);
+      transition: 0.2s;
+    }
+
+    &__head-arrow-container {
+      display: none;
+    }
+
     &__banner-container {
       @include size(auto, auto);
 
-      padding-right: 74px;
       max-width: 1000px;
+      min-width: 500px;
     }
+    // End banner
 
+    // Start content
     &__content {
       @include size(auto, auto);
       padding-left: 70px;
       padding-right: 0px;
       max-width: 440px;
+    }
+
+    &__slider-container {
+      display: block;
+      @include setAbsoluteAndLocation($bottom: -135px, $left: 65px);
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .welcome {
+    &__banner-container {
+      padding-right: 74px;
+    }
+
+    &__arrow-image {
+      @include size(117px, 315px);
+      @include setAbsoluteAndLocation($top: 8px, $right: 62px);
+    }
+
+    &__orange-image-wrapper {
+      @include setAbsoluteAndLocation($top: 110px, $right: -12px);
     }
   }
 }

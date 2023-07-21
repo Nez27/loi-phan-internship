@@ -7,14 +7,25 @@ section.welcome
         src=welcome_img_path + "welcome-image-mobile.png",
         alt="Welcome banner image"
       )
-      img.welcome__lines-background(
-        src=welcome_img_path + "lines-background-mobile.png",
-        alt="Lines background"
-      )
-      img.welcome__arrow-image(
-        src=welcome_img_path + "arrow-mobile.png",
-        alt="Arrow image"
-      )
+      picture
+        source(
+          media="(min-width: 840px)",
+          srcset=welcome_img_path + "lines-background-desktop.png"
+        )
+        img.welcome__lines-background(
+          src=welcome_img_path + "lines-background-mobile.png",
+          alt="Lines background"
+        )
+      picture
+        source(
+          media="(min-width: 840px)",
+          srcset=welcome_img_path + "arrow-desktop.png",
+          alt="Arrow image"
+        )
+        img.welcome__arrow-image(
+          src=welcome_img_path + "arrow-mobile.png",
+          alt="Arrow image"
+        )
       img.welcome__mint-image(
         src=welcome_img_path + "mint.png",
         alt="Mint image"
@@ -58,8 +69,18 @@ section.welcome
       a.welcome__download-btn.btn(href="javascript:void(0)") Download App
       a.welcome__watch-video-link.no-underline(href="javascript:void(0)")
         .welcome__play-icon-wrapper
-          img(src=welcome_img_path + "play-icon.svg", alt="Watch button image")
-        = "Watch Video"
+          svg.welcome__play-icon(
+            width="12",
+            height="13",
+            viewBox="0 0 12 13",
+            fill="none",
+            xmlns="http://www.w3.org/2000/svg"
+          )
+            path(
+              d="M12 6.5L0.749999 12.9952L0.75 0.00480889L12 6.5Z",
+              fill="currentColor"
+            ) 
+        span.welcome__text-download-btn Watch Video
     .welcome__slider-container
       img.welcome__slider-image(
         src=welcome_img_path + "slider.png",

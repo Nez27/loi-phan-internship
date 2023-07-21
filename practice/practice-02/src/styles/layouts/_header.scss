@@ -15,9 +15,10 @@
 @media screen and (min-width: 840px) {
   .header {
     padding-top: 32px;
-    padding-inline: 24px;
+    padding-left: 70px;
+    padding-right: 61px;
     gap: 10px;
-    max-width: $max-width;
+    max-width: 1309px;
   }
 
   .header-content {
