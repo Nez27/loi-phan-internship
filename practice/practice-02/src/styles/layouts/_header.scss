@@ -1,5 +1,5 @@
 .header {
-  @include flex-container(space-between, null, center);
+  @include flex-container(space-between, $align-items: center);
 
   position: relative;
   max-width: 428px;

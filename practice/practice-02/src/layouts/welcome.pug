@@ -3,7 +3,7 @@
 section.welcome
   .welcome__banner
     .welcome__banner-container
-      img.welcome__banner-image(
+      img.welcome__banner-img(
         src=welcome_img_path + "welcome-image-mobile.png",
         alt="Welcome banner image"
       )
@@ -22,17 +22,27 @@ section.welcome
           srcset=welcome_img_path + "arrow-desktop.png",
           alt="Arrow image"
         )
-        img.welcome__arrow-image(
+        img.welcome__arrow-img-up(
           src=welcome_img_path + "arrow-mobile.png",
           alt="Arrow image"
         )
-      img.welcome__mint-image(
+      img.welcome__mint-img(
         src=welcome_img_path + "mint.png",
         alt="Mint image"
       )
   .welcome__content
-    .welcome__orange-image-wrapper
-      img(src=welcome_img_path + "orange.png", alt="Orange background image")
+    .welcome__arrow-down-img-wrapper
+      img.welcome__arrow-img-down(
+        src=welcome_img_path + "arrow-desktop-2.png",
+        alt="Arrow image down"
+      )
+    .welcome__orange-img-wrapper
+      picture
+        source(
+          media="(min-width: 840px)",
+          srcset=welcome_img_path + "orange-desktop.png"
+        )
+        img(src=welcome_img_path + "orange.png", alt="Orange background image")
     .welcome__text-box
       .welcome__icon-container
         img.welcome__love-icon(
@@ -49,9 +59,10 @@ section.welcome
       span.primary-text food
       = " & "
       span.secondary-text delivery
+        .welcome__underline-img-container
+          img(src=welcome_img_path + "underline.png", alt="Underline image")
       = "."
-    .welcome__underline-image-container
-      img(src=welcome_img_path + "underline.png", alt="Underline image")
+
     p.welcome__description Best cooks and best delivery guys all at your service. Hot tasty food will reach you in 60 minutes.
     form.welcome__search-form(action="#")
       .welcome__search-icon-wrapper
@@ -82,7 +93,7 @@ section.welcome
             ) 
         span.welcome__text-download-btn Watch Video
     .welcome__slider-container
-      img.welcome__slider-image(
+      img.welcome__slider-img(
         src=welcome_img_path + "slider.png",
         alt="Slider image"
       )

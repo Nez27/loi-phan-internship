@@ -3,7 +3,7 @@
   margin: auto;
   max-width: 428px;
 
-  // Start banner css code
+  // Start banner
   &__banner-container {
     @include size(428px, auto);
     @include flex-container(center, column);
@@ -11,7 +11,7 @@
     position: relative;
   }
 
-  &__banner-image {
+  &__banner-img {
     z-index: 1;
   }
 
@@ -20,18 +20,18 @@
     @include size(187px, 430px);
   }
 
-  &__arrow-image {
+  &__arrow-img-up {
     @include setAbsoluteAndLocation($top: -15px, $right: 50px);
 
     @include size(43px, 215px);
   }
 
-  &__mint-image {
+  &__mint-img {
     @include setAbsoluteAndLocation($bottom: 100px, $right: 0);
   }
-  // End banner css code
+  // End banner
 
-  // Start content css code
+  // Start content
   &__content {
     @include flex-container($flex-direction: column);
     @include size(calc(428px - 48px), auto);
@@ -41,7 +41,11 @@
     padding-inline: 24px;
   }
 
-  &__orange-image-wrapper {
+  &__arrow-down-img-wrapper {
+    display: none;
+  }
+
+  &__orange-img-wrapper {
     @include setAbsoluteAndLocation($top: 0, $right: 35px);
   }
 
@@ -77,9 +81,10 @@
     font-size: $fs-x-lg;
     text-transform: capitalize;
     font-weight: 900;
+    max-width: 530px;
   }
 
-  &__underline-image-container {
+  &__underline-img-container {
     margin-top: 12px;
   }
 
@@ -88,6 +93,7 @@
     font-size: $fs-x-md;
     line-height: 140%;
     letter-spacing: -0.2px;
+    max-width: 517px;
   }
 
   &__search-form {
@@ -96,6 +102,7 @@
     margin-top: 32px;
     border-radius: 100px;
     border: 0.5px solid $black;
+    max-width: 471px;
   }
 
   &__search-icon-wrapper {
@@ -148,7 +155,7 @@
       }
 
       .welcome__text-download-btn {
-        color: $primary-color;
+        color: $white;
       }
     }
   }
@@ -183,7 +190,7 @@
   &__slider-container {
     display: none;
   }
-  // End content css code
+  // End content
 }
 
 .slider-container {
@@ -191,6 +198,10 @@
 }
 
 @media screen and (min-width: 840px) {
+  .secondary-text {
+    position: relative;
+  }
+
   .welcome {
     @include flex-container(
       $flex-direction: row-reverse,
@@ -203,10 +214,10 @@
     max-width: $max-width;
 
     // Start banner
-    &__banner-image {
+    &__banner-img {
       @include size(100%, 100%);
 
-      max-width: 689px;
+      max-width: 650px;
     }
 
     &__lines-background {
@@ -214,7 +225,7 @@
       @include size(313px, 718px);
     }
 
-    &__arrow-image {
+    &__arrow-img-up {
       @include size(117px, 315px);
       @include setAbsoluteAndLocation($top: -40px, $right: 5px);
       transition: 0.2s;
@@ -237,13 +248,43 @@
       @include size(auto, auto);
       padding-left: 70px;
       padding-right: 0px;
-      max-width: 440px;
+      max-width: 560px;
+    }
+
+    &__orange-img-wrapper {
+      @include setAbsoluteAndLocation($top: 170px, $right: -50px);
+      transition: 0.2s;
+    }
+
+    &__heading {
+      font-size: $fs-xx-lg;
+    }
+
+    &__underline-img-container {
+      @include setAbsoluteAndLocation($bottom: -10px, $left: 8px);
+    }
+
+    &__description {
+      font-size: $fs-lg;
+    }
+
+    &__arrow-down-img-wrapper {
+      @include setAbsoluteAndLocation($top: -50px, $left: 220px);
+
+      display: block;
+      transition: 0.2s;
+    }
+
+    &__search-form {
+      @include size(auto, 54px);
     }
 
     &__slider-container {
       display: block;
       @include setAbsoluteAndLocation($bottom: -135px, $left: 65px);
     }
+
+    // End content
   }
 }
 
@@ -253,13 +294,16 @@
       padding-right: 74px;
     }
 
-    &__arrow-image {
-      @include size(117px, 315px);
+    &__arrow-img-up {
       @include setAbsoluteAndLocation($top: 8px, $right: 62px);
     }
 
-    &__orange-image-wrapper {
-      @include setAbsoluteAndLocation($top: 110px, $right: -12px);
+    &__orange-img-wrapper {
+      @include setAbsoluteAndLocation($top: 110px, $right: -50px);
+    }
+
+    &__arrow-down-img-wrapper {
+      @include setAbsoluteAndLocation($top: -95px, $left: 230px);
     }
   }
 }
