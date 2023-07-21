@@ -1,5 +1,6 @@
-.secondary-text {
+.delivery-text-box {
   position: relative;
+  display: inline-block;
 }
 
 .welcome {
@@ -261,7 +262,7 @@
     }
 
     &__underline-img-container {
-      @include setAbsoluteAndLocation($bottom: -10px, $left: 8px);
+      @include setAbsoluteAndLocation($bottom: -25px, $left: 8px);
     }
 
     &__description {

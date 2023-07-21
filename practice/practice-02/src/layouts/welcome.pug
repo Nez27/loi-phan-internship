@@ -58,7 +58,8 @@ section.welcome
       = " for "
       span.primary-text food
       = " & "
-      span.secondary-text delivery
+      .delivery-text-box
+        span.secondary-text delivery
         .welcome__underline-img-container
           img(src=welcome_img_path + "underline.png", alt="Underline image")
       = "."
@@ -82,7 +83,7 @@ section.welcome
         .welcome__play-icon-wrapper
           svg.welcome__play-icon(
             width="12",
-            height="13",
+            height="12",
             viewBox="0 0 12 13",
             fill="none",
             xmlns="http://www.w3.org/2000/svg"
