@@ -1,3 +1,7 @@
+.secondary-text {
+  position: relative;
+}
+
 .welcome {
   @include flex-container(center, column);
   margin: auto;
@@ -85,7 +89,7 @@
   }
 
   &__underline-img-container {
-    margin-top: 12px;
+    @include setAbsoluteAndLocation($bottom: -20px, $left: 0px);
   }
 
   &__description {
@@ -198,10 +202,6 @@
 }
 
 @media screen and (min-width: 840px) {
-  .secondary-text {
-    position: relative;
-  }
-
   .welcome {
     @include flex-container(
       $flex-direction: row-reverse,
