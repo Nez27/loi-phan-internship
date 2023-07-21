@@ -17,7 +17,8 @@
 @mixin flex-container(
   $justify-content: null,
   $flex-direction: null,
-  $align-items: null
+  $align-items: null,
+  $gap: null
 ) {
   display: flex;
   @if $justify-content != null {
@@ -31,6 +32,10 @@
   @if $align-items != null {
     align-items: $align-items;
   }
+
+  @if $gap != null {
+    gap: $gap;
+  }
 }
 
 @mixin size($width: null, $height: null) {
@@ -40,5 +45,30 @@
 
   @if $height != null {
     height: $height;
+  }
+}
+
+@mixin setAbsoluteAndLocation(
+  $top: null,
+  $left: null,
+  $right: null,
+  $bottom: null
+) {
+  position: absolute;
+
+  @if $top != null {
+    top: $top;
+  }
+
+  @if $left != null {
+    left: $left;
+  }
+
+  @if $right != null {
+    right: $right;
+  }
+
+  @if $bottom != null {
+    bottom: $bottom;
   }
 }

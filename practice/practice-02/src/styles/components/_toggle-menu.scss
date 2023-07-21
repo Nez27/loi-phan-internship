@@ -43,7 +43,7 @@
 }
 
 .toggle-menu:checked ~ .nav-list {
-  right: 0;
+  display: block;
 }
 
 @media screen and (min-width: 840px) {
