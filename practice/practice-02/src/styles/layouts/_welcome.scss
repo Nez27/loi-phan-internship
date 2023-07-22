@@ -7,6 +7,12 @@
   @include flex-container(center, column);
   margin: auto;
   max-width: 428px;
+  padding-top: 117px;
+  background: linear-gradient(
+    180deg,
+    rgba(245, 71, 72, 0.06) 0%,
+    rgba(245, 71, 72, 0) 100%
+  );
 
   // Start banner
   &__banner-container {
@@ -144,8 +150,11 @@
   }
 
   &__action-container {
-    @include flex-container($gap: 31px);
+    @include flex-container($justify-content: space-between);
+
+    width: 100%;
     margin-top: 44px;
+    max-width: 376px;
   }
 
   &__watch-video-link {
@@ -155,12 +164,12 @@
 
     &:hover {
       .welcome__play-icon-wrapper {
-        width: 100%;
-        background-color: $secondary-color;
+        transform: scale(1.2);
+        transition: 0.2s;
       }
 
       .welcome__text-download-btn {
-        color: $white;
+        color: $primary-color;
       }
     }
   }
@@ -182,6 +191,7 @@
   &__text-download-btn {
     color: $gray;
     font-size: $fs-sm;
+    font-family: $tertiary-font;
     margin-left: 70px;
     transition: 0.5s;
     z-index: 1;
@@ -210,7 +220,7 @@
       $justify-content: space-between
     );
 
-    padding-top: 20px;
+    padding-top: 130px;
     width: 100%;
     max-width: $max-width;
 
@@ -259,6 +269,7 @@
 
     &__heading {
       font-size: $fs-xx-lg;
+      line-height: 125%;
     }
 
     &__underline-img-container {
@@ -267,6 +278,18 @@
 
     &__description {
       font-size: $fs-lg;
+    }
+
+    &__watch-video-link:hover {
+      .welcome__play-icon-wrapper {
+        transform: unset;
+        width: 100%;
+        background-color: $secondary-color;
+      }
+
+      .welcome__text-download-btn {
+        color: $white;
+      }
     }
 
     &__arrow-down-img-wrapper {
