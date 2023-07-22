@@ -4,16 +4,18 @@
 }
 
 .welcome {
-  @include flex-container(center, column);
-  margin: auto;
-  max-width: 428px;
-  padding-top: 117px;
   background: linear-gradient(
     180deg,
     rgba(245, 71, 72, 0.06) 0%,
     rgba(245, 71, 72, 0) 100%
   );
 
+  &__container {
+    @include flex-container(center, column);
+    margin: auto;
+    max-width: 428px;
+    padding-top: 117px;
+  }
   // Start banner
   &__banner-container {
     @include size(428px, auto);
@@ -218,15 +220,17 @@
 
 @media screen and (min-width: 840px) {
   .welcome {
-    @include flex-container(
-      $flex-direction: row-reverse,
-      $align-items: center,
-      $justify-content: space-between
-    );
+    &__container {
+      @include flex-container(
+        $flex-direction: row-reverse,
+        $align-items: center,
+        $justify-content: space-between
+      );
 
-    padding-top: 130px;
-    width: 100%;
-    max-width: $max-width;
+      padding-top: 130px;
+      width: 100%;
+      max-width: $max-width;
+    }
 
     // Start banner
     &__banner-img {
