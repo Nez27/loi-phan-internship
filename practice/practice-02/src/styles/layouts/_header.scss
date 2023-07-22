@@ -1,5 +1,10 @@
 .header {
-  @include setAbsoluteAndLocation($top: 0, $right: 0, $left: 0);
+  @include setAbsoluteAndLocation(
+    $absolute: true,
+    $top: 0,
+    $right: 0,
+    $left: 0
+  );
 
   max-width: 428px;
   margin: auto;
