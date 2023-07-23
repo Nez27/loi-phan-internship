@@ -1,0 +1,54 @@
+- var service_img_path = "./assets/images/service/";
+- var list_1 = [{icon : 1, content: "Online order"}, {icon : 3, content: "Pre-Reservation"}, {icon : 3, content: "Super chef"}];
+- var list_2 = [{icon : 2, content: "24/7 Service"}, {icon : 3, content: "Oragonized foodhut place"}, {icon : 3, content: "Clean Kitchen"}];
+
+section.service
+  .service__container
+    .service__background-color
+    .service__img-container
+      picture
+        source(
+          media="(min-width: 1200px)",
+          srcset=service_img_path + "background-desktop.png"
+        )
+        img.service__background-img(
+          src=service_img_path + "background-mobile.png",
+          alt="Background image"
+        )
+      picture
+        source(
+          media="(min-width: 1200px)",
+          srcset=service_img_path + "main-character-desktop.png"
+        )
+        img.service__main-img(
+          src=service_img_path + "main-character-mobile.png",
+          alt="Main character image"
+        )
+      picture
+        source(
+          media="(min-width: 1200px)",
+          srcset=service_img_path + "vegetable-desktop.png"
+        )
+        img.service__vegetable-img(
+          src=service_img_path + "vegetable-mobile.png",
+          alt="Vegetable background image"
+        )
+    .service__content
+      h2.service__heading We are
+        = " "
+        span.primary-text more
+        = " than "
+        span.secondary-text multiple
+        = " service"
+      p.service__description This is a type of resturent which typically serves food and drink, in addition to light refreshments such as baked goods or snacks. The term comes frome the rench word meaning food
+      .service__category
+        each item in [list_1, list_2]
+          .service__category-list
+            each val in item
+              .service__category-item
+                img.service__icon-category(
+                  src=service_img_path + "icon-" + val.icon + ".png",
+                  alt="Icon category"
+                )
+                span.service__name-category= val.content
+      a.service__btn.btn About us
