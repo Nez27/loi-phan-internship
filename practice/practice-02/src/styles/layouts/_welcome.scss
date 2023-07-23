@@ -4,7 +4,7 @@
 }
 
 .welcome {
-  @include flex-container(center, column);
+  @include flex-container(true, center, column);
   margin: auto;
   max-width: 428px;
   padding-top: 117px;
@@ -17,7 +17,7 @@
   // Start banner
   &__banner-container {
     @include size(428px, auto);
-    @include flex-container(center, column);
+    @include flex-container(true, center, column);
 
     position: relative;
   }
@@ -44,7 +44,7 @@
 
   // Start content
   &__content {
-    @include flex-container($flex-direction: column);
+    @include flex-container(true, $flex-direction: column);
     @include size(calc(428px - 48px), auto);
 
     position: relative;
@@ -61,7 +61,7 @@
   }
 
   &__text-box {
-    @include flex-container($align-items: center, $gap: 6px);
+    @include flex-container(true, $align-items: center, $gap: 6px);
     @include size(fit-content);
 
     background-color: #feeae9;
@@ -112,7 +112,7 @@
   }
 
   &__search-form {
-    @include flex-container();
+    @include flex-container(true);
 
     margin-top: 32px;
     border-radius: 100px;
@@ -154,7 +154,7 @@
   }
 
   &__action-container {
-    @include flex-container($justify-content: space-between);
+    @include flex-container(true, $justify-content: space-between);
 
     width: 100%;
     margin-top: 44px;
@@ -162,7 +162,7 @@
   }
 
   &__watch-video-link {
-    @include flex-container($align-items: center, $gap: 21px);
+    @include flex-container(true, $align-items: center, $gap: 21px);
 
     position: relative;
 
