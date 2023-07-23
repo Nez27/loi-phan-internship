@@ -190,6 +190,7 @@
     background-color: $white;
     box-shadow: 0 40px 50px 3px rgba($color: $primary-color, $alpha: 0.5);
     transition: width 0.5s;
+    line-height: 100%;
   }
 
   &__text-download-btn {

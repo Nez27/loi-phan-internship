@@ -1,4 +1,8 @@
 .offer {
+  position: relative;
+  max-width: 428px;
+  margin-inline: auto;
+
   &__container {
     @include flex-container($justify-content: center, $flex-direction: column);
 
@@ -127,13 +131,19 @@
     color: $white;
     text-transform: capitalize;
   }
+
+  &__rosemary-container {
+    @include setAbsoluteAndLocation(true, $bottom: -120px, $right: 0);
+    z-index: 0;
+  }
 }
 
 @media screen and (min-width: 840px) {
   .offer {
-    padding-inline: 73px;
+    max-width: $max-width;
+
     &__container {
-      max-width: 1440px;
+      max-width: $max-width;
     }
 
     &__food-image {
