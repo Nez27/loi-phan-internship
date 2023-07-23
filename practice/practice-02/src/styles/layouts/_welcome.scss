@@ -7,6 +7,12 @@
   @include flex-container(center, column);
   margin: auto;
   max-width: 428px;
+  padding-top: 117px;
+  background: linear-gradient(
+    180deg,
+    rgba(245, 71, 72, 0.06) 0%,
+    rgba(245, 71, 72, 0) 100%
+  );
 
   // Start banner
   &__banner-container {
@@ -21,18 +27,18 @@
   }
 
   &__lines-background {
-    @include setAbsoluteAndLocation($top: -76px, $right: 0);
+    @include setAbsoluteAndLocation($absolute: true, $top: -76px, $right: 0);
     @include size(187px, 430px);
   }
 
   &__arrow-img-up {
-    @include setAbsoluteAndLocation($top: -15px, $right: 50px);
+    @include setAbsoluteAndLocation($absolute: true, $top: -15px, $right: 50px);
 
     @include size(43px, 215px);
   }
 
   &__mint-img {
-    @include setAbsoluteAndLocation($bottom: 100px, $right: 0);
+    @include setAbsoluteAndLocation($absolute: true, $bottom: 100px, $right: 0);
   }
   // End banner
 
@@ -51,7 +57,7 @@
   }
 
   &__orange-img-wrapper {
-    @include setAbsoluteAndLocation($top: 0, $right: 35px);
+    @include setAbsoluteAndLocation($absolute: true, $top: 0, $right: 35px);
   }
 
   &__text-box {
@@ -78,7 +84,7 @@
 
   &__head-arrow-container {
     @include size(13px, 7.3px);
-    @include setAbsoluteAndLocation($right: 107px);
+    @include setAbsoluteAndLocation($absolute: true, $right: 107px);
   }
 
   &__heading {
@@ -90,7 +96,11 @@
   }
 
   &__underline-img-container {
-    @include setAbsoluteAndLocation($bottom: -20px, $left: 0px);
+    @include setAbsoluteAndLocation(
+      $absolute: true,
+      $bottom: -20px,
+      $left: 0px
+    );
   }
 
   &__description {
@@ -144,8 +154,11 @@
   }
 
   &__action-container {
-    @include flex-container($gap: 31px);
+    @include flex-container($justify-content: space-between);
+
+    width: 100%;
     margin-top: 44px;
+    max-width: 376px;
   }
 
   &__watch-video-link {
@@ -155,12 +168,12 @@
 
     &:hover {
       .welcome__play-icon-wrapper {
-        width: 100%;
-        background-color: $secondary-color;
+        transform: scale(1.2);
+        transition: 0.2s;
       }
 
       .welcome__text-download-btn {
-        color: $white;
+        color: $primary-color;
       }
     }
   }
@@ -182,6 +195,7 @@
   &__text-download-btn {
     color: $gray;
     font-size: $fs-sm;
+    font-family: $tertiary-font;
     margin-left: 70px;
     transition: 0.5s;
     z-index: 1;
@@ -210,7 +224,7 @@
       $justify-content: space-between
     );
 
-    padding-top: 20px;
+    padding-top: 130px;
     width: 100%;
     max-width: $max-width;
 
@@ -259,6 +273,7 @@
 
     &__heading {
       font-size: $fs-xx-lg;
+      line-height: 125%;
     }
 
     &__underline-img-container {
@@ -269,8 +284,24 @@
       font-size: $fs-lg;
     }
 
+    &__watch-video-link:hover {
+      .welcome__play-icon-wrapper {
+        transform: unset;
+        width: 100%;
+        background-color: $secondary-color;
+      }
+
+      .welcome__text-download-btn {
+        color: $white;
+      }
+    }
+
     &__arrow-down-img-wrapper {
-      @include setAbsoluteAndLocation($top: -50px, $left: 220px);
+      @include setAbsoluteAndLocation(
+        $absolute: true,
+        $top: -50px,
+        $left: 220px
+      );
 
       display: block;
       transition: 0.2s;
@@ -282,7 +313,11 @@
 
     &__slider-container {
       display: block;
-      @include setAbsoluteAndLocation($bottom: -135px, $left: 65px);
+      @include setAbsoluteAndLocation(
+        $absolute: true,
+        $bottom: -135px,
+        $left: 65px
+      );
     }
 
     // End content
@@ -304,7 +339,7 @@
     }
 
     &__arrow-down-img-wrapper {
-      @include setAbsoluteAndLocation($top: -95px, $left: 230px);
+      @include setAbsoluteAndLocation($top: -75px, $left: 230px);
     }
   }
 }

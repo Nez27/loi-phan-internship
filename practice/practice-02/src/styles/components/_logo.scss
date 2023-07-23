@@ -1,5 +1,9 @@
+.logo {
+  @include size(100%, 100%);
+}
+
 .logo-wrapper {
-  @include size(121px, 78px);
+  @include size(97px, 62px);
 
   flex-shrink: 0;
 }
@@ -8,4 +12,10 @@
   @include size(100%, 100%);
 
   display: inline-block;
+}
+
+@media screen and (min-width: 840px) {
+  .logo-wrapper {
+    @include size(121px, 78px);
+  }
 }
