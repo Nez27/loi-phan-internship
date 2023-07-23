@@ -126,10 +126,11 @@
     @include setAbsoluteAndLocation(true, $bottom: 0px);
 
     padding: 10px 20px;
-    background-color: $primary-color;
-    border-radius: 100px;
-    color: $white;
     text-transform: capitalize;
+
+    &:hover {
+      background-color: $secondary-color;
+    }
   }
 
   &__rosemary-container {
