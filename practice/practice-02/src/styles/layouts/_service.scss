@@ -40,6 +40,8 @@
 
   &__content {
     padding-inline: 24px;
+
+    z-index: 1;
   }
 
   &__heading {
@@ -80,9 +82,11 @@
     margin-top: 43px;
     max-width: 74px;
     text-transform: capitalize;
-    font-size: $fs-md;
-    text-align: center;
     padding: 10px 20px;
+
+    &:hover {
+      background-color: $secondary-color;
+    }
   }
 }
 
