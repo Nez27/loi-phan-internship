@@ -1,0 +1,19 @@
+- var offer_img_path = "./assets/images/offer/";
+
+section.offer
+  .offer__container
+    .offer__dot-background
+      img(
+        src=offer_img_path + "dot-background.png",
+        alt="Dot background image"
+      )
+    h2.offer__heading Today
+      = " "
+      span.primary-text Special
+      = " Offers"
+    p.offer__description Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+    .offer__card-list
+      +cardFoodItem(1, 10, "4.5", "Kebab", "Lorem Ipsum is simply dummy text of the printing and typesetting industry")
+      +cardFoodItem(2, 15, "4.8", "Chicken Tikka", "Lorem Ipsum is simply dummy text of the printing and typesetting industry")
+      +cardFoodItem(3, 8, "4.2", "Desi Chowmein", "Lorem Ipsum is simply dummy text of the printing and typesetting industry")
+      +cardFoodItem(4, 28, "5.0", "Chicken Chargha", "Lorem Ipsum is simply dummy text of the printing and typesetting industry")
