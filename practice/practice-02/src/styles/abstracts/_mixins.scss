@@ -49,12 +49,15 @@
 }
 
 @mixin setAbsoluteAndLocation(
+  $absolute: false,
   $top: null,
   $left: null,
   $right: null,
   $bottom: null
 ) {
-  position: absolute;
+  @if $absolute {
+    position: absolute;
+  }
 
   @if $top != null {
     top: $top;

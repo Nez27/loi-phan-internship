@@ -34,6 +34,12 @@ $font-path: "../assets/fonts";
     url("#{$font-path}/inter.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Poppins";
+  src: url("#{$font-path}/poppins-medium.woff2") format("woff2"),
+    url("#{$font-path}/poppins-medium.ttf") format("truetype");
+}
+
 * {
   font-family: $primary-font;
 }
