@@ -14,7 +14,7 @@
     background: linear-gradient(
       180deg,
       rgba(253, 197, 94, 0.01) 0%,
-      rgba(253, 197, 94, 0.06) 50%,
+      rgba(253, 197, 94, 0.1) 50%,
       rgba(253, 197, 94, 0) 100%
     );
   }
@@ -107,16 +107,33 @@
       max-width: 460px;
     }
 
+    &__img-container {
+      @include size(100%, 619px);
+    }
+
     &__background-img {
-      @include setAbsoluteAndLocation(true, $top: 35px, $left: 0);
+      @include setAbsoluteAndLocation(true, $top: 100px, $left: 0);
+    }
+
+    &__background-color {
+      @include setAbsoluteAndLocation($top: 400px, $left: -100px);
+      @include size(400px, 50%);
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(253, 197, 94, 0.2),
+        rgba(253, 197, 94, 0.1),
+        rgba(253, 197, 94, 0.01),
+        rgba(253, 197, 94, 0)
+      );
     }
 
     &__main-img {
-      @include setAbsoluteAndLocation(true, $top: 30px, $left: 35px);
+      @include setAbsoluteAndLocation(true, $top: 95px, $left: 35px);
     }
 
     &__vegetable-img {
-      @include setAbsoluteAndLocation(true, $bottom: 30, $left: 50px);
+      @include setAbsoluteAndLocation(true, $bottom: 145px, $left: 50px);
     }
 
     &__heading {
@@ -140,28 +157,41 @@
     &__container {
       @include flex-container($align-items: center, $gap: 150px);
     }
-    &__background-color {
-      display: none;
-    }
-
-    &__img-container {
-      @include size(100%, 619px);
-    }
 
     &__background-img {
-      @include setAbsoluteAndLocation(true, $top: -200px, $left: 0);
+      @include setAbsoluteAndLocation(true, $top: 0px, $left: 0);
+    }
+
+    &__background-color {
+      @include setAbsoluteAndLocation($left: -150px);
+      @include size(500px, 50%);
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(253, 197, 94, 0.6),
+        rgba(253, 197, 94, 0.4),
+        rgba(253, 197, 94, 0.2),
+        rgba(253, 197, 94, 0.06),
+        rgba(253, 197, 94, 0.01),
+        rgba(253, 197, 94, 0),
+        rgba(253, 197, 94, 0)
+      );
+    }
+
+    &__description {
+      margin-top: 21px;
     }
 
     &__main-img {
-      @include setAbsoluteAndLocation(true, $top: 70px, $left: 70px);
+      @include setAbsoluteAndLocation(true, $top: -17px, $left: 70px);
     }
 
     &__vegetable-img {
-      @include setAbsoluteAndLocation(true, $bottom: 10, $left: 95px);
+      @include setAbsoluteAndLocation(true, $bottom: 95px, $left: 105px);
     }
 
     &__content {
-      padding-top: 220px;
+      padding-top: 50px;
     }
   }
 }
