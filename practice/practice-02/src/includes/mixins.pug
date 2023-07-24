@@ -1,28 +1,25 @@
 - var values = [1, 2, 3];
 
 mixin cardFoodItem(itemFood, price, ratePoint, foodName, foodDescription)
-  .offer__card-item
-    img.offer__card-img(
-      src=offer_img_path + "item-card.png",
-      alt="Item card image"
-    )
-    img.offer__food-image(
+  .card-item
+    img.card-img(src=offer_img_path + "item-card.png", alt="Item card image")
+    img.food-image(
       src=offer_img_path + "food-" + itemFood + ".png",
       alt="Food " + itemFood + " image"
     )
-    span.offer__price= price + "$"
-    .offer__content-card
-      .offer__rate
-        .offer__avatar-container
+    span.price= price + "$"
+    .content-card
+      .rate
+        .avatar-container
           each val in values 
             img(
               src=offer_img_path + "avatar-" + val + "-item-" + itemFood + ".png",
               alt="Avatar user rate",
-              class="offer__avatar-" + val
+              class="avatar-" + val
             )
-        .offer__star-container
+        .star-container
           img(src=offer_img_path + "star.png", alt="Star image")
-        span.offer__rate-point= "(" + ratePoint + ")"
-      span.offer__food-name= foodName
-      p.offer__food-description= foodDescription
-    a.offer__order-btn.btn.no-underline(href="javascript:void(0)") Order now
+        span.rate-point= "(" + ratePoint + ")"
+      span.food-name= foodName
+      p.food-description= foodDescription
+    a.order-btn.btn.no-underline(href="javascript:void(0)") Order now
