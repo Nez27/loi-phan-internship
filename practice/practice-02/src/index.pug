@@ -4,12 +4,18 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel="stylesheet", href="./styles/main.scss")
+    link(
+      rel="icon",
+      type="image/x-icon",
+      href="./assets/images/favicon-16x16.png"
+    )
     title Food Hut
   body
-    header.header.flex
-      .logo-wrapper
-        a.logo-link(href="javascript:void(0)")
-          img.logo(src="./assets/images/logo.svg", alt="Food Hut logo")
-      .header-content.flex
-        include layouts/nav-menu
+    header.header
+      .header-container
+        .logo-wrapper
+          a.logo-link(href="javascript:void(0)")
+            img.logo(src="./assets/images/logo.svg", alt="Food Hut logo")
+        .header-content
+          include layouts/nav-menu
     include layouts/welcome
