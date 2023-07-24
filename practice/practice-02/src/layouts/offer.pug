@@ -1,4 +1,5 @@
 - var offer_img_path = "./assets/images/offer/";
+- var food_1 = [];
 
 section.offer
   .offer__container
@@ -13,10 +14,10 @@ section.offer
       = " Offers"
     p.offer__description Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
     .offer__card-list
-      +cardFoodItem(1, 10, "4.5", "Kebab", "Lorem Ipsum is simply dummy text of the printing and typesetting industry")
-      +cardFoodItem(2, 15, "4.8", "Chicken Tikka", "Lorem Ipsum is simply dummy text of the printing and typesetting industry")
-      +cardFoodItem(3, 8, "4.2", "Desi Chowmein", "Lorem Ipsum is simply dummy text of the printing and typesetting industry")
-      +cardFoodItem(4, 28, "5.0", "Chicken Chargha", "Lorem Ipsum is simply dummy text of the printing and typesetting industry")
+      +cardFoodItem({ no: "1", price: "10" , ratePoint: "4.5", foodName: "Kebab", foodDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry", imageUrl: offer_img_path + "food-1.png"})
+      +cardFoodItem({ no: "2", price: "15", ratePoint: "4.8", foodName: "Chicken Tikka", foodDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry", imageUrl: offer_img_path + "food-2.png"})
+      +cardFoodItem({ no: "3", price: "8", ratePoint: "4.2", foodName: "Desi Chowmein", foodDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry", imageUrl: offer_img_path + "food-3.png"})
+      +cardFoodItem({ no: "4", price: "28", ratePoint: "5.0", foodName: "Chicken Chargha", foodDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry", imageUrl: offer_img_path + "food-4.png"})
   .offer__rosemary-container
     picture
       source(

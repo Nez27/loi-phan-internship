@@ -1,25 +1,22 @@
 - var values = [1, 2, 3];
 
-mixin cardFoodItem(itemFood, price, ratePoint, foodName, foodDescription)
+mixin cardFoodItem(food)
   .card-item
     img.card-img(src=offer_img_path + "item-card.png", alt="Item card image")
-    img.food-image(
-      src=offer_img_path + "food-" + itemFood + ".png",
-      alt="Food " + itemFood + " image"
-    )
-    span.price= price + "$"
+    img.food-image(src=food.imageUrl, alt=food.name + " image")
+    span.price= food.price + "$"
     .content-card
       .rate
         .avatar-container
           each val in values 
             img(
-              src=offer_img_path + "avatar-" + val + "-item-" + itemFood + ".png",
+              src=offer_img_path + "avatar-" + val + "-item-" + food.no + ".png",
               alt="Avatar user rate",
               class="avatar-" + val
             )
         .star-container
           img(src=offer_img_path + "star.png", alt="Star image")
-        span.rate-point= "(" + ratePoint + ")"
-      span.food-name= foodName
-      p.food-description= foodDescription
+        span.rate-point= "(" + food.ratePoint + ")"
+      p.food-name= food.foodName
+      p.food-description= food.foodDescription
     a.order-btn.btn.no-underline(href="javascript:void(0)") Order now
