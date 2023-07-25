@@ -40,7 +40,6 @@
       $top: -15px,
       $right: 50px
     );
-
     @include size(43px, 215px);
   }
 
@@ -252,7 +251,6 @@
 
     &__lines-background {
       @include set-absolute-and-location($top: -150px, $right: 0px);
-
       @include size(313px, 718px);
     }
 
@@ -278,6 +276,7 @@
     // Start content
     &__content {
       @include size(auto, auto);
+
       padding-left: 70px;
       padding-right: 0px;
       max-width: 560px;
@@ -285,6 +284,7 @@
 
     &__orange-img-wrapper {
       @include set-absolute-and-location($top: 170px, $right: -50px);
+
       transition: 0.2s;
     }
 
