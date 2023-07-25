@@ -11,7 +11,7 @@
   );
 
   &__container {
-    @include flex-container(true, center, column);
+    @include flex-justify-center-col;
 
     margin: auto;
     max-width: 428px;
@@ -20,7 +20,7 @@
   // Start banner
   &__banner-container {
     @include size(428px, auto);
-    @include flex-container(true, center, column);
+    @include flex-justify-center-col;
 
     position: relative;
   }
@@ -55,9 +55,10 @@
 
   // Start content
   &__content {
-    @include flex-container(true, $flex-direction: column);
+    @include d-flex;
     @include size(calc(428px - 48px), auto);
 
+    flex-direction: column;
     position: relative;
     padding-top: 63.37px;
     padding-inline: 24px;
@@ -72,9 +73,10 @@
   }
 
   &__text-box {
-    @include flex-container(true, $align-items: center, $gap: 6px);
+    @include flex-align-center;
     @include size(fit-content);
 
+    gap: 6px;
     background-color: #feeae9;
     border-radius: 100px;
     padding: 6px;
@@ -123,7 +125,7 @@
   }
 
   &__search-form {
-    @include flex-container(true);
+    @include d-flex;
 
     margin-top: 32px;
     border-radius: 100px;
@@ -165,7 +167,7 @@
   }
 
   &__action-container {
-    @include flex-container(true, $justify-content: space-between);
+    @include flex-between;
 
     width: 100%;
     margin-top: 44px;
@@ -173,10 +175,10 @@
   }
 
   &__watch-video-link {
-    @include flex-container(true, $align-items: center, $gap: 21px);
+    @include flex-align-center;
 
     position: relative;
-
+    gap: 21px;
     &:hover {
       .welcome__play-icon-wrapper {
         transform: scale(1.2);
@@ -232,12 +234,9 @@
 @media screen and (min-width: 840px) {
   .welcome {
     &__container {
-      @include flex-container(
-        $flex-direction: row-reverse,
-        $align-items: center,
-        $justify-content: space-between
-      );
-
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-between;
       padding-top: 130px;
       width: 100%;
       max-width: $max-width;

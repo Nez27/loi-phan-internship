@@ -11,8 +11,9 @@
 }
 
 .header-container {
-  @include flex-container(true, space-between, $align-items: center);
+  @include flex-align-center;
 
+  justify-content: space-between;
   position: relative;
   max-width: 428px;
   min-width: $min-width;
@@ -21,7 +22,7 @@
 }
 
 .header-content {
-  @include flex-container(true, space-between);
+  @include flex-between;
 }
 
 @media screen and (min-width: 840px) {

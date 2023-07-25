@@ -53,12 +53,14 @@
 
   .nav-list {
     @include size(auto, auto);
-    @include flex-container(true, space-between, column);
+    @include flex-between;
 
+    flex-direction: column;
+    gap: 10px;
     position: unset;
     flex-direction: row;
     border: none;
-    max-width: 600px;
+    max-width: 660px;
     margin: unset;
     background-color: transparent;
   }
@@ -66,6 +68,7 @@
   .nav-item {
     border-bottom: none;
     padding: 0;
+    text-align: center;
 
     &:hover {
       background-color: unset;

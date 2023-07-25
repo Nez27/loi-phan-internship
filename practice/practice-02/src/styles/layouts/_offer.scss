@@ -4,11 +4,7 @@
   margin-inline: auto;
 
   &__container {
-    @include flex-container(
-      true,
-      $justify-content: center,
-      $flex-direction: column
-    );
+    @include flex-justify-center-col;
 
     max-width: 380px;
     margin: auto;
@@ -40,8 +36,9 @@
   }
 
   &__card-list {
-    @include flex-container(true, $gap: 70px);
+    @include d-flex;
 
+    gap: 70px;
     padding-inline: 35px;
     flex-wrap: nowrap;
     padding-top: 65px;
@@ -70,12 +67,9 @@
     }
 
     &__card-list {
-      @include flex-container(
-        $align-items: center,
-        $gap: 18px,
-        $justify-content: center
-      );
-
+      align-items: center;
+      gap: 18px;
+      justify-content: center;
       row-gap: 30px;
       flex-wrap: wrap;
     }

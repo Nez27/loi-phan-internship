@@ -14,32 +14,27 @@
   right: 0;
 }
 
-@mixin flex-container(
-  $flex: false,
-  $justify-content: null,
-  $flex-direction: null,
-  $align-items: null,
-  $gap: null
-) {
-  @if $flex != false {
-    display: flex;
-  }
+@mixin d-flex {
+  display: flex;
+}
 
-  @if $justify-content != null {
-    justify-content: $justify-content;
-  }
+@mixin flex-justify-center-col {
+  @include d-flex;
 
-  @if $flex-direction != null {
-    flex-direction: $flex-direction;
-  }
+  justify-content: center;
+  flex-direction: column;
+}
 
-  @if $align-items != null {
-    align-items: $align-items;
-  }
+@mixin flex-align-center {
+  @include d-flex;
 
-  @if $gap != null {
-    gap: $gap;
-  }
+  align-items: center;
+}
+
+@mixin flex-between {
+  @include d-flex;
+
+  justify-content: space-between;
 }
 
 @mixin size($width: null, $height: null) {

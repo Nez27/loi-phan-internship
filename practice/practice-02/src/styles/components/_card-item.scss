@@ -1,7 +1,8 @@
 .card-item {
-  @include flex-container(true, $align-items: center, $flex-direction: column);
+  @include flex-align-center;
   @include size(auto, 516px);
 
+  flex-direction: column;
   position: relative;
 }
 
@@ -27,11 +28,15 @@
 .content-card {
   @include set-absolute-and-location(true, $bottom: 60px);
   @include size(100%, auto);
-  @include flex-container(true, $align-items: center, $flex-direction: column);
+  @include flex-align-center;
+
+  flex-direction: column;
 }
 
 .rate {
-  @include flex-container(true, $align-items: center, $gap: 10px);
+  @include flex-align-center;
+
+  gap: 10px;
 }
 
 .avatar-container {
