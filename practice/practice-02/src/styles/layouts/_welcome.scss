@@ -11,7 +11,8 @@
   );
 
   &__container {
-    @include flex-container(center, column);
+    @include flex-container(true, center, column);
+
     margin: auto;
     max-width: 428px;
     padding-top: 117px;
@@ -19,7 +20,7 @@
   // Start banner
   &__banner-container {
     @include size(428px, auto);
-    @include flex-container(center, column);
+    @include flex-container(true, center, column);
 
     position: relative;
   }
@@ -29,24 +30,31 @@
   }
 
   &__lines-background {
-    @include setAbsoluteAndLocation($absolute: true, $top: -76px, $right: 0);
+    @include set-absolute-and-location($absolute: true, $top: -76px, $right: 0);
     @include size(187px, 430px);
   }
 
   &__arrow-img-up {
-    @include setAbsoluteAndLocation($absolute: true, $top: -15px, $right: 50px);
-
+    @include set-absolute-and-location(
+      $absolute: true,
+      $top: -15px,
+      $right: 50px
+    );
     @include size(43px, 215px);
   }
 
   &__mint-img {
-    @include setAbsoluteAndLocation($absolute: true, $bottom: 100px, $right: 0);
+    @include set-absolute-and-location(
+      $absolute: true,
+      $bottom: 100px,
+      $right: 0
+    );
   }
   // End banner
 
   // Start content
   &__content {
-    @include flex-container($flex-direction: column);
+    @include flex-container(true, $flex-direction: column);
     @include size(calc(428px - 48px), auto);
 
     position: relative;
@@ -59,11 +67,11 @@
   }
 
   &__orange-img-wrapper {
-    @include setAbsoluteAndLocation($absolute: true, $top: 0, $right: 35px);
+    @include set-absolute-and-location($absolute: true, $top: 0, $right: 35px);
   }
 
   &__text-box {
-    @include flex-container($align-items: center, $gap: 6px);
+    @include flex-container(true, $align-items: center, $gap: 6px);
     @include size(fit-content);
 
     background-color: #feeae9;
@@ -86,7 +94,7 @@
 
   &__head-arrow-container {
     @include size(13px, 7.3px);
-    @include setAbsoluteAndLocation($absolute: true, $right: 107px);
+    @include set-absolute-and-location($absolute: true, $right: 107px);
   }
 
   &__heading {
@@ -98,7 +106,7 @@
   }
 
   &__underline-img-container {
-    @include setAbsoluteAndLocation(
+    @include set-absolute-and-location(
       $absolute: true,
       $bottom: -20px,
       $left: 0px
@@ -114,7 +122,7 @@
   }
 
   &__search-form {
-    @include flex-container();
+    @include flex-container(true);
 
     margin-top: 32px;
     border-radius: 100px;
@@ -156,7 +164,7 @@
   }
 
   &__action-container {
-    @include flex-container($justify-content: space-between);
+    @include flex-container(true, $justify-content: space-between);
 
     width: 100%;
     margin-top: 44px;
@@ -164,7 +172,7 @@
   }
 
   &__watch-video-link {
-    @include flex-container($align-items: center, $gap: 21px);
+    @include flex-container(true, $align-items: center, $gap: 21px);
 
     position: relative;
 
@@ -186,12 +194,14 @@
 
   &__play-icon-wrapper {
     @include size(12px, 17px);
+
     position: absolute;
     padding: 17.5px 20px;
     border-radius: 50px;
     background-color: $white;
     box-shadow: 0 40px 50px 3px rgba($color: $primary-color, $alpha: 0.5);
     transition: width 0.5s;
+    line-height: 100%;
   }
 
   &__text-download-btn {
@@ -240,13 +250,14 @@
     }
 
     &__lines-background {
-      @include setAbsoluteAndLocation($top: -150px, $right: 0px);
+      @include set-absolute-and-location($top: -150px, $right: 0px);
       @include size(313px, 718px);
     }
 
     &__arrow-img-up {
       @include size(117px, 315px);
-      @include setAbsoluteAndLocation($top: -40px, $right: 5px);
+      @include set-absolute-and-location($top: -40px, $right: 5px);
+
       transition: 0.2s;
     }
 
@@ -265,13 +276,15 @@
     // Start content
     &__content {
       @include size(auto, auto);
+
       padding-left: 70px;
       padding-right: 0px;
       max-width: 560px;
     }
 
     &__orange-img-wrapper {
-      @include setAbsoluteAndLocation($top: 170px, $right: -50px);
+      @include set-absolute-and-location($top: 170px, $right: -50px);
+
       transition: 0.2s;
     }
 
@@ -281,7 +294,7 @@
     }
 
     &__underline-img-container {
-      @include setAbsoluteAndLocation($bottom: -25px, $left: 8px);
+      @include set-absolute-and-location($bottom: -25px, $left: 8px);
     }
 
     &__description {
@@ -301,7 +314,7 @@
     }
 
     &__arrow-down-img-wrapper {
-      @include setAbsoluteAndLocation(
+      @include set-absolute-and-location(
         $absolute: true,
         $top: -50px,
         $left: 220px
@@ -317,7 +330,7 @@
 
     &__slider-container {
       display: block;
-      @include setAbsoluteAndLocation(
+      @include set-absolute-and-location(
         $absolute: true,
         $bottom: -135px,
         $left: 65px
@@ -335,15 +348,15 @@
     }
 
     &__arrow-img-up {
-      @include setAbsoluteAndLocation($top: 8px, $right: 62px);
+      @include set-absolute-and-location($top: 8px, $right: 62px);
     }
 
     &__orange-img-wrapper {
-      @include setAbsoluteAndLocation($top: 110px, $right: -50px);
+      @include set-absolute-and-location($top: 110px, $right: -50px);
     }
 
     &__arrow-down-img-wrapper {
-      @include setAbsoluteAndLocation($top: -75px, $left: 230px);
+      @include set-absolute-and-location($top: -75px, $left: 230px);
     }
   }
 }

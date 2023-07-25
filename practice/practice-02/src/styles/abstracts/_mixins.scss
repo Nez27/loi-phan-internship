@@ -15,12 +15,16 @@
 }
 
 @mixin flex-container(
+  $flex: false,
   $justify-content: null,
   $flex-direction: null,
   $align-items: null,
   $gap: null
 ) {
-  display: flex;
+  @if $flex != false {
+    display: flex;
+  }
+
   @if $justify-content != null {
     justify-content: $justify-content;
   }
@@ -48,7 +52,7 @@
   }
 }
 
-@mixin setAbsoluteAndLocation(
+@mixin set-absolute-and-location(
   $absolute: false,
   $top: null,
   $left: null,

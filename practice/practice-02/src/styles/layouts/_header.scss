@@ -1,5 +1,5 @@
 .header {
-  @include setAbsoluteAndLocation(
+  @include set-absolute-and-location(
     $absolute: true,
     $top: 0,
     $right: 0,
@@ -11,7 +11,7 @@
 }
 
 .header-container {
-  @include flex-container(space-between, $align-items: center);
+  @include flex-container(true, space-between, $align-items: center);
 
   position: relative;
   max-width: 428px;
@@ -21,7 +21,7 @@
 }
 
 .header-content {
-  @include flex-container(space-between);
+  @include flex-container(true, space-between);
 }
 
 @media screen and (min-width: 840px) {
