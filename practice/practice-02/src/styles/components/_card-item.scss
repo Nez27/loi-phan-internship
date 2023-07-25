@@ -6,13 +6,13 @@
 }
 
 .food-image {
-  @include setAbsoluteAndLocation(true, $top: 29px);
+  @include set-absolute-and-location(true, $top: 29px);
 
   margin: auto;
 }
 
 .price {
-  @include setAbsoluteAndLocation(true, $top: 176px, $right: 70px);
+  @include set-absolute-and-location(true, $top: 176px, $right: 70px);
   @include size(52px, 52px);
 
   color: $white;
@@ -25,7 +25,7 @@
 }
 
 .content-card {
-  @include setAbsoluteAndLocation(true, $bottom: 60px);
+  @include set-absolute-and-location(true, $bottom: 60px);
   @include size(100%, auto);
   @include flex-container(true, $align-items: center, $flex-direction: column);
 }
@@ -35,23 +35,26 @@
 }
 
 .avatar-container {
-  position: relative;
   @include size(74px, 38px);
+
+  position: relative;
 }
 
 .avatar {
-  &-0 {
-    @include setAbsoluteAndLocation(true, $left: 38px);
+  &:first-child {
+    @include set-absolute-and-location(true, $left: 38px);
+
     z-index: 2;
   }
 
-  &-1 {
-    @include setAbsoluteAndLocation(true, $left: 19px);
+  &:nth-child(2) {
+    @include set-absolute-and-location(true, $left: 19px);
+
     z-index: 1;
   }
 
-  &-2 {
-    @include setAbsoluteAndLocation(true, $left: 0);
+  &:last-child {
+    @include set-absolute-and-location(true, $left: 0);
   }
 }
 
@@ -73,7 +76,7 @@
 }
 
 .order-btn {
-  @include setAbsoluteAndLocation(true, $bottom: 0px);
+  @include set-absolute-and-location(true, $bottom: 0px);
 
   padding: 10px 20px;
   text-transform: capitalize;

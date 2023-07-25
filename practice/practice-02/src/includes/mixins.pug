@@ -8,11 +8,7 @@ mixin foodItemCard(food)
         .avatar-container
           if food.avatarImageList && food.avatarImageList.length > 0
             each avatar, index in food.avatarImageList 
-              img(
-                src=avatar.avatarUrl,
-                alt="Avatar user rate",
-                class="avatar-" + index
-              )
+              img.avatar(src=avatar.avatarUrl, alt="Avatar user rate")
         .star-container
           img(src=offer_img_path + "star.png", alt="Star image")
         span.rate-point= "(" + food.ratePoint + ")"

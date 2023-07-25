@@ -1,5 +1,5 @@
 .header {
-  @include setAbsoluteAndLocation(
+  @include set-absolute-and-location(
     $absolute: true,
     $top: 0,
     $right: 0,
