@@ -12,6 +12,7 @@
 
   &__container {
     @include flex-container(true, center, column);
+
     margin: auto;
     max-width: 428px;
     padding-top: 117px;
@@ -194,6 +195,7 @@
 
   &__play-icon-wrapper {
     @include size(12px, 17px);
+
     position: absolute;
     padding: 17.5px 20px;
     border-radius: 50px;
@@ -250,12 +252,14 @@
 
     &__lines-background {
       @include set-absolute-and-location($top: -150px, $right: 0px);
+
       @include size(313px, 718px);
     }
 
     &__arrow-img-up {
       @include size(117px, 315px);
       @include set-absolute-and-location($top: -40px, $right: 5px);
+
       transition: 0.2s;
     }
 
