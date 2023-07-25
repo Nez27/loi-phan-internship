@@ -1,5 +1,5 @@
 .card-item {
-  @include flex-container($align-items: center, $flex-direction: column);
+  @include flex-container(true, $align-items: center, $flex-direction: column);
   @include size(auto, 516px);
 
   position: relative;
@@ -12,7 +12,7 @@
 }
 
 .price {
-  @include setAbsoluteAndLocation(true, $top: 176px, $right: 110px);
+  @include setAbsoluteAndLocation(true, $top: 176px, $right: 70px);
   @include size(52px, 52px);
 
   color: $white;
@@ -27,11 +27,11 @@
 .content-card {
   @include setAbsoluteAndLocation(true, $bottom: 60px);
   @include size(100%, auto);
-  @include flex-container($align-items: center, $flex-direction: column);
+  @include flex-container(true, $align-items: center, $flex-direction: column);
 }
 
 .rate {
-  @include flex-container($align-items: center, $gap: 10px);
+  @include flex-container(true, $align-items: center, $gap: 10px);
 }
 
 .avatar-container {
@@ -40,17 +40,17 @@
 }
 
 .avatar {
-  &-1 {
+  &-0 {
     @include setAbsoluteAndLocation(true, $left: 38px);
     z-index: 2;
   }
 
-  &-2 {
+  &-1 {
     @include setAbsoluteAndLocation(true, $left: 19px);
     z-index: 1;
   }
 
-  &-3 {
+  &-2 {
     @include setAbsoluteAndLocation(true, $left: 0);
   }
 }

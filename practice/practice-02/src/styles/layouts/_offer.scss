@@ -4,7 +4,11 @@
   margin-inline: auto;
 
   &__container {
-    @include flex-container($justify-content: center, $flex-direction: column);
+    @include flex-container(
+      true,
+      $justify-content: center,
+      $flex-direction: column
+    );
 
     max-width: 380px;
     margin: auto;
@@ -36,10 +40,11 @@
   }
 
   &__card-list {
-    display: grid;
+    @include flex-container(true, $gap: 70px);
+
+    padding-inline: 35px;
+    flex-wrap: nowrap;
     padding-top: 65px;
-    grid-auto-flow: column;
-    grid-auto-columns: 100%;
     overflow-x: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -71,14 +76,6 @@
       row-gap: 30px;
       flex-wrap: wrap;
     }
-  }
-
-  .price {
-    @include setAbsoluteAndLocation($top: 176px, $right: 70px);
-  }
-
-  .food-image {
-    @include setAbsoluteAndLocation($top: 29px, $right: 55px);
   }
 }
 
