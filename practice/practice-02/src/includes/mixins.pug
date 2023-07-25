@@ -1,0 +1,21 @@
+mixin foodItemCard(food)
+  .card-item
+    img.card-img(src=offer_img_path + "item-card.png", alt="Item card image")
+    img.food-image(src=food.imageUrl, alt=food.name + " image")
+    span.price= food.price + "$"
+    .content-card
+      .rate
+        .avatar-container
+          if food.avatarImageList && food.avatarImageList.length > 0
+            each avatar, index in food.avatarImageList 
+              img(
+                src=avatar.avatarUrl,
+                alt="Avatar user rate",
+                class="avatar-" + index
+              )
+        .star-container
+          img(src=offer_img_path + "star.png", alt="Star image")
+        span.rate-point= "(" + food.ratePoint + ")"
+      p.food-name= food.foodName
+      p.food-description= food.foodDescription
+    a.order-btn.btn(href="javascript:void(0)") Order now
