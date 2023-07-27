@@ -1,6 +1,7 @@
 - var service_img_path = "./assets/images/service/";
-- var list_1 = [{icon : 1, content: "Online order"}, {icon : 3, content: "Pre-Reservation"}, {icon : 3, content: "Super chef"}];
-- var list_2 = [{icon : 2, content: "24/7 Service"}, {icon : 3, content: "Oragonized foodhut place"}, {icon : 3, content: "Clean Kitchen"}];
+- var list_1 = [{url_icon : service_img_path + "icon-1.png", content: "Online order"}, {url_icon : service_img_path + "icon-3.png", content: "Pre-Reservation"}, {url_icon : service_img_path + "icon-3.png", content: "Super chef"}];
+- var list_2 = [{url_icon : service_img_path + "icon-2.png", content: "24/7 Service"}, {url_icon : service_img_path + "icon-3.png", content: "Oragonized foodhut place"}, {url_icon : service_img_path + "icon-3.png", content: "Clean Kitchen"}];
+- var list_category = [list_1, list_2];
 
 section.service
   .service__container
@@ -42,13 +43,13 @@ section.service
         = " service"
       p.service__description This is a type of resturent which typically serves food and drink, in addition to light refreshments such as baked goods or snacks. The term comes frome the rench word meaning food
       .service__category
-        each item in [list_1, list_2]
+        each item in list_category
           .service__category-list
             each val in item
               .service__category-item
                 img.service__icon-category(
-                  src=service_img_path + "icon-" + val.icon + ".png",
+                  src=val.url_icon,
                   alt="Icon category"
                 )
-                span.service__name-category= val.content
+                p.service__name-category= val.content
       a.service__btn.btn(href="javascript:void(0)") About us
