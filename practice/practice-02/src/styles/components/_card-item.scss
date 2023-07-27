@@ -1,19 +1,24 @@
+%align-center-col {
+  @include flex-layout($align: center, $direction: column);
+}
+
 .card-item {
-  @include flex-align-center;
+  @extend %d-flex, %align-center-col;
   @include size(auto, 516px);
 
-  flex-direction: column;
   position: relative;
 }
 
 .food-image {
-  @include set-absolute-and-location(true, $top: 29px);
+  @extend %absolute;
+  @include set-absolute-and-location($top: 29px);
 
   margin: auto;
 }
 
 .price {
-  @include set-absolute-and-location(true, $top: 176px, $right: 70px);
+  @extend %absolute;
+  @include set-absolute-and-location($top: 176px, $right: 70px);
   @include size(52px, 52px);
 
   color: $white;
@@ -26,17 +31,18 @@
 }
 
 .content-card {
-  @include set-absolute-and-location(true, $bottom: 60px);
+  @extend %d-flex, %align-center-col, %absolute;
+  @include set-absolute-and-location($bottom: 60px);
   @include size(100%, auto);
-  @include flex-align-center;
-
-  flex-direction: column;
 }
 
 .rate {
-  @include flex-align-center;
+  @extend %d-flex;
+  @include flex-layout($align: center, $gap: 10px);
+}
 
-  gap: 10px;
+.star-container {
+  @include size(24px, 22px);
 }
 
 .avatar-container {
@@ -47,19 +53,22 @@
 
 .avatar {
   &:first-child {
-    @include set-absolute-and-location(true, $left: 38px);
+    @extend %absolute;
+    @include set-absolute-and-location($left: 38px);
 
     z-index: 2;
   }
 
   &:nth-child(2) {
-    @include set-absolute-and-location(true, $left: 19px);
+    @extend %absolute;
+    @include set-absolute-and-location($left: 19px);
 
     z-index: 1;
   }
 
   &:last-child {
-    @include set-absolute-and-location(true, $left: 0);
+    @extend %absolute;
+    @include set-absolute-and-location($left: 0);
   }
 }
 
@@ -81,7 +90,8 @@
 }
 
 .order-btn {
-  @include set-absolute-and-location(true, $bottom: 0px);
+  @extend %absolute;
+  @include set-absolute-and-location($bottom: 0px);
 
   padding: 10px 20px;
   text-transform: capitalize;

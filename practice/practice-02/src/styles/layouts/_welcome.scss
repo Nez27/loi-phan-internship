@@ -11,7 +11,8 @@
   );
 
   &__container {
-    @include flex-justify-center-col;
+    @extend %d-flex;
+    @include flex-layout($justify: center, $direction: column);
 
     margin: auto;
     max-width: 428px;
@@ -19,8 +20,9 @@
   }
   // Start banner
   &__banner-container {
+    @extend %d-flex;
     @include size(428px, auto);
-    @include flex-justify-center-col;
+    @include flex-layout($justify: center, $direction: column);
 
     position: relative;
   }
@@ -30,52 +32,50 @@
   }
 
   &__lines-background {
-    @include set-absolute-and-location($absolute: true, $top: -76px, $right: 0);
+    @extend %absolute;
+    @include set-absolute-and-location($top: -76px, $right: 0);
     @include size(187px, 430px);
   }
 
   &__arrow-img-up {
-    @include set-absolute-and-location(
-      $absolute: true,
-      $top: -15px,
-      $right: 50px
-    );
+    @extend %absolute;
+    @include set-absolute-and-location($top: -15px, $right: 50px);
     @include size(43px, 215px);
   }
 
   &__mint-img {
-    @include set-absolute-and-location(
-      $absolute: true,
-      $bottom: 100px,
-      $right: 0
-    );
+    @extend %absolute;
+    @include set-absolute-and-location($bottom: 100px, $right: 0);
   }
   // End banner
 
   // Start content
   &__content {
-    @include d-flex;
     @include size(calc(428px - 48px), auto);
+    @extend %d-flex;
+    @include flex-layout($direction: column);
 
-    flex-direction: column;
     position: relative;
     padding-top: 63.37px;
     padding-inline: 24px;
   }
 
   &__arrow-down-img-wrapper {
+    @extend %absolute;
+
     display: none;
   }
 
   &__orange-img-wrapper {
-    @include set-absolute-and-location($absolute: true, $top: 0, $right: 35px);
+    @extend %absolute;
+    @include set-absolute-and-location($top: 0, $right: 35px);
   }
 
   &__text-box {
-    @include flex-align-center;
+    @extend %d-flex;
+    @include flex-layout($align: center, $gap: 6px);
     @include size(fit-content);
 
-    gap: 6px;
     background-color: #feeae9;
     border-radius: 100px;
     padding: 6px;
@@ -96,7 +96,8 @@
 
   &__head-arrow-container {
     @include size(13px, 7.3px);
-    @include set-absolute-and-location($absolute: true, $right: 107px);
+    @extend %absolute;
+    @include set-absolute-and-location($right: 107px);
   }
 
   &__heading {
@@ -108,11 +109,8 @@
   }
 
   &__underline-img-container {
-    @include set-absolute-and-location(
-      $absolute: true,
-      $bottom: -20px,
-      $left: 0px
-    );
+    @extend %absolute;
+    @include set-absolute-and-location($bottom: -20px, $left: 0px);
   }
 
   &__description {
@@ -124,7 +122,7 @@
   }
 
   &__search-form {
-    @include d-flex;
+    @extend %d-flex;
 
     margin-top: 32px;
     border-radius: 100px;
@@ -166,7 +164,8 @@
   }
 
   &__action-container {
-    @include flex-between;
+    @extend %d-flex;
+    @include flex-layout($justify: space-between, $gap: 10px);
 
     width: 100%;
     margin-top: 44px;
@@ -174,10 +173,10 @@
   }
 
   &__watch-video-link {
-    @include flex-align-center;
+    @extend %d-flex;
+    @include flex-layout($align: center, $gap: 21px);
 
     position: relative;
-    gap: 21px;
     &:hover {
       .welcome__play-icon-wrapper {
         transform: scale(1.2);
@@ -195,9 +194,9 @@
   }
 
   &__play-icon-wrapper {
+    @extend %absolute;
     @include size(12px, 17px);
 
-    position: absolute;
     padding: 17.5px 20px;
     border-radius: 50px;
     background-color: $white;
@@ -221,6 +220,8 @@
   }
 
   &__slider-container {
+    @extend %absolute;
+
     display: none;
   }
   // End content
@@ -233,9 +234,12 @@
 @media screen and (min-width: 840px) {
   .welcome {
     &__container {
-      flex-direction: row-reverse;
-      align-items: center;
-      justify-content: space-between;
+      @include flex-layout(
+        $direction: row-reverse,
+        $align: center,
+        $justify: space-between
+      );
+
       padding-top: 130px;
       width: 100%;
       max-width: $max-width;
@@ -313,11 +317,7 @@
     }
 
     &__arrow-down-img-wrapper {
-      @include set-absolute-and-location(
-        $absolute: true,
-        $top: -50px,
-        $left: 220px
-      );
+      @include set-absolute-and-location($top: -50px, $left: 220px);
 
       display: block;
       transition: 0.2s;
@@ -329,11 +329,7 @@
 
     &__slider-container {
       display: block;
-      @include set-absolute-and-location(
-        $absolute: true,
-        $bottom: -135px,
-        $left: 65px
-      );
+      @include set-absolute-and-location($bottom: -135px, $left: 65px);
     }
 
     // End content

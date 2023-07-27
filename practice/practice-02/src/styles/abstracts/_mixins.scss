@@ -1,3 +1,11 @@
+%d-flex {
+  display: flex;
+}
+
+%absolute {
+  position: absolute;
+}
+
 @mixin base-icon-menu {
   @include size(36px, 3px);
 
@@ -8,33 +16,38 @@
 
 @mixin icon-menu {
   @include base-icon-menu;
+  @extend %absolute;
 
   content: "";
-  position: absolute;
   right: 0;
 }
 
-@mixin d-flex {
-  display: flex;
-}
+@mixin flex-layout(
+  $justify: null,
+  $align: null,
+  $direction: null,
+  $gap: null,
+  $wrap: null
+) {
+  @if $justify != null {
+    justify-content: $justify;
+  }
 
-@mixin flex-justify-center-col {
-  @include d-flex;
+  @if $align != null {
+    align-items: $align;
+  }
 
-  justify-content: center;
-  flex-direction: column;
-}
+  @if $direction != null {
+    flex-direction: $direction;
+  }
 
-@mixin flex-align-center {
-  @include d-flex;
+  @if $gap != null {
+    gap: $gap;
+  }
 
-  align-items: center;
-}
-
-@mixin flex-between {
-  @include d-flex;
-
-  justify-content: space-between;
+  @if $wrap != null {
+    flex-wrap: $wrap;
+  }
 }
 
 @mixin size($width: null, $height: null) {
@@ -48,16 +61,11 @@
 }
 
 @mixin set-absolute-and-location(
-  $absolute: false,
   $top: null,
   $left: null,
   $right: null,
   $bottom: null
 ) {
-  @if $absolute {
-    position: absolute;
-  }
-
   @if $top != null {
     top: $top;
   }
