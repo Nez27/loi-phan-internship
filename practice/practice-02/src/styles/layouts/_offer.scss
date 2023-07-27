@@ -4,11 +4,8 @@
   margin-inline: auto;
 
   &__container {
-    @include flex-container(
-      true,
-      $justify-content: center,
-      $flex-direction: column
-    );
+    @extend %d-flex;
+    @include flex-layout($justify: center, $direction: column);
 
     max-width: 380px;
     margin: auto;
@@ -17,7 +14,8 @@
   }
 
   &__dot-background {
-    @include set-absolute-and-location(true, $top: 168px, $left: 0px);
+    @extend %absolute;
+    @include set-absolute-and-location($top: 168px, $left: 0px);
 
     display: none;
   }
@@ -40,10 +38,10 @@
   }
 
   &__card-list {
-    @include flex-container(true, $gap: 70px);
+    @extend %d-flex;
+    @include flex-layout($wrap: nowrap, $gap: 70px);
 
     padding-inline: 35px;
-    flex-wrap: nowrap;
     padding-top: 65px;
     overflow-x: auto;
     -ms-overflow-style: none;
@@ -55,7 +53,8 @@
   }
 
   &__rosemary-container {
-    @include set-absolute-and-location(true, $bottom: -120px, $right: 0);
+    @extend %absolute;
+    @include set-absolute-and-location($bottom: -120px, $right: 0);
 
     z-index: 0;
   }
@@ -70,14 +69,14 @@
     }
 
     &__card-list {
-      @include flex-container(
-        $align-items: center,
-        $gap: 18px,
-        $justify-content: center
+      @include flex-layout(
+        $align: center,
+        $justify: center,
+        $wrap: wrap,
+        $gap: 18px
       );
 
       row-gap: 30px;
-      flex-wrap: wrap;
     }
   }
 }
