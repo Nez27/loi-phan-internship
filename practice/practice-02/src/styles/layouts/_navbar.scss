@@ -1,10 +1,10 @@
 .nav-list {
+  @extend %absolute;
   @include size(max-content, auto);
 
   display: none;
   list-style: none;
   transition: 0.1s;
-  position: absolute;
   border: 2px solid $primary-color;
   top: 100px;
   right: 25px;
@@ -53,12 +53,12 @@
 
   .nav-list {
     @include size(auto, auto);
-    @include flex-container(true, space-between, column);
+    @include flex-layout($justify: space-between, $direction: row, $gap: 10px);
 
+    display: flex;
     position: unset;
-    flex-direction: row;
     border: none;
-    max-width: 600px;
+    max-width: 660px;
     margin: unset;
     background-color: transparent;
   }
@@ -66,6 +66,7 @@
   .nav-item {
     border-bottom: none;
     padding: 0;
+    text-align: center;
 
     &:hover {
       background-color: unset;

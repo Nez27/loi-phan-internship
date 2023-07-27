@@ -1,18 +1,16 @@
 .header {
-  @include setAbsoluteAndLocation(
-    $absolute: true,
-    $top: 0,
-    $right: 0,
-    $left: 0
-  );
+  @extend %absolute;
+  @include set-absolute-and-location($top: 0, $right: 0, $left: 0);
 
   max-width: 428px;
   margin: auto;
 }
 
 .header-container {
-  @include flex-container(true, space-between, $align-items: center);
+  @extend %d-flex;
+  @include flex-layout($align: center);
 
+  justify-content: space-between;
   position: relative;
   max-width: 428px;
   min-width: $min-width;
@@ -21,7 +19,8 @@
 }
 
 .header-content {
-  @include flex-container(true, space-between);
+  @extend %d-flex;
+  @include flex-layout($justify: space-between);
 }
 
 @media screen and (min-width: 840px) {
@@ -30,17 +29,18 @@
   }
 
   .header-container {
+    @include flex-layout($gap: 10px);
+
     padding-top: 32px;
     padding-left: 70px;
     padding-right: 61px;
-    gap: 10px;
     max-width: 1309px;
   }
 
   .header-content {
+    @include flex-layout($gap: 10px);
     @include size(100%, auto);
 
-    gap: 10px;
     max-width: 918px;
   }
 }

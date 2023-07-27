@@ -1,100 +1,104 @@
 - var welcome_img_path = "./assets/images/welcome/";
 
 section.welcome
-  .welcome__banner
-    .welcome__banner-container
-      img.welcome__banner-img(
-        src=welcome_img_path + "welcome-image-mobile.png",
-        alt="Welcome banner image"
-      )
-      picture
-        source(
-          media="(min-width: 840px)",
-          srcset=welcome_img_path + "lines-background-desktop.png"
+  .welcome__container
+    .welcome__banner
+      .welcome__banner-container
+        img.welcome__banner-img(
+          src=welcome_img_path + "welcome-image-mobile.png",
+          alt="Welcome banner image"
         )
-        img.welcome__lines-background(
-          src=welcome_img_path + "lines-background-mobile.png",
-          alt="Lines background"
-        )
-      picture
-        source(
-          media="(min-width: 840px)",
-          srcset=welcome_img_path + "arrow-desktop.png",
-          alt="Arrow image"
-        )
-        img.welcome__arrow-img-up(
-          src=welcome_img_path + "arrow-mobile.png",
-          alt="Arrow image"
-        )
-      img.welcome__mint-img(
-        src=welcome_img_path + "mint.png",
-        alt="Mint image"
-      )
-  .welcome__content
-    .welcome__arrow-down-img-wrapper
-      img.welcome__arrow-img-down(
-        src=welcome_img_path + "arrow-desktop-2.png",
-        alt="Arrow image down"
-      )
-    .welcome__orange-img-wrapper
-      picture
-        source(
-          media="(min-width: 840px)",
-          srcset=welcome_img_path + "orange-desktop.png"
-        )
-        img(src=welcome_img_path + "orange.png", alt="Orange background image")
-    .welcome__text-box
-      .welcome__icon-container
-        img.welcome__love-icon(
-          src=welcome_img_path + "love-icon.png",
-          alt="Love icon"
-        )
-      .welcome__head-arrow-container
-        img(src=welcome_img_path + "head-arrow.png", alt="Head arrow image")
-      p.welcome__text-box-content People Trust us
-    h1.welcome__heading We're
-      = " "
-      span.primary-text serious
-      = " for "
-      span.primary-text food
-      = " & "
-      .delivery-text-box
-        span.secondary-text delivery
-        .welcome__underline-img-container
-          img(src=welcome_img_path + "underline.png", alt="Underline image")
-      = "."
-
-    p.welcome__description Best cooks and best delivery guys all at your service. Hot tasty food will reach you in 60 minutes.
-    form.welcome__search-form(action="#")
-      .welcome__search-icon-wrapper
-        img.welcome__search-icon(
-          src=welcome_img_path + "search-icon.png",
-          alt="Search icon"
-        )
-      input.welcome__text-input(type="text", placeholder="Search food")
-      button.welcome__submit-btn(type="submit")
-        img.welcome__search-icon-btn(
-          src=welcome_img_path + "search-icon-btn.svg",
-          alt="Search button image"
-        )
-    .welcome__action-container
-      a.welcome__download-btn.btn(href="javascript:void(0)") Download App
-      a.welcome__watch-video-link.no-underline(href="javascript:void(0)")
-        .welcome__play-icon-wrapper
-          svg.welcome__play-icon(
-            width="12",
-            height="12",
-            viewBox="0 0 12 13",
-            fill="none",
-            xmlns="http://www.w3.org/2000/svg"
+        picture
+          source(
+            media="(min-width: 840px)",
+            srcset=welcome_img_path + "lines-background-desktop.png"
           )
-            path(
-              d="M12 6.5L0.749999 12.9952L0.75 0.00480889L12 6.5Z",
-              fill="currentColor"
-            ) 
-        span.welcome__text-download-btn Watch Video
-    .welcome__slider-container
-      img.welcome__slider-img(
-        src=welcome_img_path + "slider.png",
-        alt="Slider image"
-      )
+          img.welcome__lines-background(
+            src=welcome_img_path + "lines-background-mobile.png",
+            alt="Lines background"
+          )
+        picture
+          source(
+            media="(min-width: 840px)",
+            srcset=welcome_img_path + "arrow-desktop.png",
+            alt="Arrow image"
+          )
+          img.welcome__arrow-img-up(
+            src=welcome_img_path + "arrow-mobile.png",
+            alt="Arrow image"
+          )
+        img.welcome__mint-img(
+          src=welcome_img_path + "mint.png",
+          alt="Mint image"
+        )
+    .welcome__content
+      .welcome__arrow-down-img-wrapper
+        img.welcome__arrow-img-down(
+          src=welcome_img_path + "arrow-desktop-2.png",
+          alt="Arrow image down"
+        )
+      .welcome__orange-img-wrapper
+        picture
+          source(
+            media="(min-width: 840px)",
+            srcset=welcome_img_path + "orange-desktop.png"
+          )
+          img(
+            src=welcome_img_path + "orange.png",
+            alt="Orange background image"
+          )
+      .welcome__text-box
+        .welcome__icon-container
+          img.welcome__love-icon(
+            src=welcome_img_path + "love-icon.png",
+            alt="Love icon"
+          )
+        .welcome__head-arrow-container
+          img(src=welcome_img_path + "head-arrow.png", alt="Head arrow image")
+        p.welcome__text-box-content People Trust us
+      h1.welcome__heading We're
+        = " "
+        span.primary-text serious
+        = " for "
+        span.primary-text food
+        = " & "
+        .delivery-text-box
+          span.secondary-text delivery
+          .welcome__underline-img-container
+            img(src=welcome_img_path + "underline.png", alt="Underline image")
+        = "."
+
+      p.welcome__description Best cooks and best delivery guys all at your service. Hot tasty food will reach you in 60 minutes.
+      form.welcome__search-form(action="#")
+        .welcome__search-icon-wrapper
+          img.welcome__search-icon(
+            src=welcome_img_path + "search-icon.png",
+            alt="Search icon"
+          )
+        input.welcome__text-input(type="text", placeholder="Search food")
+        button.welcome__submit-btn(type="submit")
+          img.welcome__search-icon-btn(
+            src=welcome_img_path + "search-icon-btn.svg",
+            alt="Search button image"
+          )
+      .welcome__action-container
+        a.welcome__download-btn.btn(href="javascript:void(0)") Download App
+        a.welcome__watch-video-link.link-text(href="javascript:void(0)")
+          .welcome__play-icon-wrapper
+            svg.welcome__play-icon(
+              width="12",
+              height="12",
+              viewBox="0 0 12 13",
+              fill="none",
+              xmlns="http://www.w3.org/2000/svg"
+            )
+              path(
+                d="M12 6.5L0.749999 12.9952L0.75 0.00480889L12 6.5Z",
+                fill="currentColor"
+              ) 
+          span.welcome__text-download-btn Watch Video
+      .welcome__slider-container
+        img.welcome__slider-img(
+          src=welcome_img_path + "slider.png",
+          alt="Slider image"
+        )
