@@ -1,30 +1,17 @@
-- var values = [1, 2, 3];
-
-mixin cardFoodItem(itemFood, price, ratePoint, foodName, foodDescription)
-  .offer__card-item
-    img.offer__card-img(
-      src=offer_img_path + "item-card.png",
-      alt="Item card image"
-    )
-    img.offer__food-image(
-      src=offer_img_path + "food-" + itemFood + ".png",
-      alt="Food " + itemFood + " image"
-    )
-    span.offer__price= price + "$"
-    .offer__content-card
-      .offer__rate
-        .offer__avatar-container
-          each val in values 
-            img(
-              src=offer_img_path + "avatar-" + val + "-item-" + itemFood + ".png",
-              alt="Avatar user rate",
-              class="offer__avatar-" + val
-            )
-        .offer__star-container
+mixin foodItemCard(food)
+  .card-item
+    img.card-img(src=offer_img_path + "item-card.png", alt="Item card image")
+    img.food-image(src=food.imageUrl, alt=food.name + " image")
+    span.price= food.price + "$"
+    .content-card
+      .rate
+        .avatar-container
+          if food.avatarImageList && food.avatarImageList.length > 0
+            each avatar, index in food.avatarImageList 
+              img.avatar(src=avatar.avatarUrl, alt="Avatar user rate")
+        .star-container
           img(src=offer_img_path + "star.png", alt="Star image")
-        span.offer__rate-point= "(" + ratePoint + ")"
-      span.offer__food-name= foodName
-      p.offer__food-description= foodDescription
-    a.offer__order-btn Order now
-
-//- mixin listCategory(iconUrl, content)
+        span.rate-point= "(" + food.ratePoint + ")"
+      p.food-name= food.foodName
+      p.food-description= food.foodDescription
+    a.order-btn.btn(href="javascript:void(0)") Order now
