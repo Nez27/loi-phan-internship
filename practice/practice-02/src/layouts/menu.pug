@@ -1,11 +1,12 @@
 - var image_menu_path = "./assets/images/menu/";
 - var list_category = ["Ramen", "Breakfast", "Lunch", "Dinner", "Maxican", "Italian", "Desserts", "Drinks"];
 - var list_image_food = ["./assets/images/offer/food-1.png", image_menu_path + "food-2.png", image_menu_path + "food-3.png", image_menu_path + "food-4.png", image_menu_path + "food-5.png", image_menu_path + "food-6.png", image_menu_path + "food-7.png", image_menu_path + "food-8.png"];
+- var default_value = { price: "10", ratePoint: "4.5", foodName: "Kebab", foodDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry", avatarImageList: [{ avatarUrl: avatar_img_path + "avatar-1.png" }, { avatarUrl: avatar_img_path + "avatar-2.png" }, { avatarUrl: avatar_img_path + "avatar-3.png" }] };
 
 section.menu
   .menu__container
     h2.menu__heading
-      span.primary-text Menu
+      span.primary-text= Menu
       = " That "
       span.secondary-text Always
       = " Make You Fall In "
@@ -15,6 +16,6 @@ section.menu
         a.menu__category-item.link-text(href="javascript:void(0)")= item
     .menu__card-list
       each url in list_image_food
-        - var food = { imageUrl: url, price: "10", ratePoint: "4.5", foodName: "Kebab", foodDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry", avatarImageList: [{ avatarUrl: avatar_img_path + "avatar-1.png" }, { avatarUrl: avatar_img_path + "avatar-2.png" }, { avatarUrl: avatar_img_path + "avatar-3.png" }] };
+        - var image_food = { imageUrl: url };
 
-        +foodItemCard(food)
+        +foodItemCard({ ...image_food, ...default_value })
