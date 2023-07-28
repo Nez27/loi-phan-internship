@@ -1,0 +1,93 @@
+.platform {
+  &__container {
+    max-width: 428px;
+    margin-inline: auto;
+    padding-top: 26px;
+    padding-bottom: 58px;
+
+    background: linear-gradient(
+      0,
+      rgba(253, 197, 94, 0.15) 0%,
+      rgba(253, 197, 94, 0.05) 50%,
+      rgba(253, 197, 94, 0) 100%
+    );
+  }
+
+  &__image-container {
+    @include size(auto, 502px);
+
+    position: relative;
+    max-width: 100%;
+  }
+
+  &__main-image {
+    @extend %absolute;
+    @include set-absolute-and-location($top: 0, $right: 0);
+  }
+
+  &__content {
+    padding-top: 52px;
+    padding-left: 20px;
+  }
+
+  &__heading {
+    font-size: $fs-xx-lg;
+    font-weight: 700;
+    max-width: 371px;
+  }
+
+  &__description {
+    font-size: $fs-md;
+    color: $black;
+    margin-top: 23px;
+    max-width: 366px;
+  }
+
+  &__store-container {
+    @extend %d-flex;
+    @include flex-layout($gap: 27px);
+
+    margin-top: 43px;
+  }
+}
+
+@media screen and (min-width: 840px) {
+  .platform {
+    &__container {
+      @include flex-layout($direction: row-reverse, $align: center);
+
+      display: flex;
+      max-width: 1440px;
+      max-height: 632px;
+      padding-top: 50px;
+    }
+
+    &__image-container {
+      @include size(704px, 786px);
+    }
+
+    &__main-image {
+      @include set-absolute-and-location($top: 160px, $right: 0);
+    }
+
+    &__heading {
+      max-width: 643px;
+    }
+
+    &__description {
+      max-width: 550px;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .platform {
+    &__container {
+      padding-top: 170px;
+    }
+
+    &__main-image {
+      @include set-absolute-and-location($top: 70px, $right: 0);
+    }
+  }
+}
