@@ -1,0 +1,132 @@
+%mr-ml-auto {
+  margin-inline: auto;
+}
+
+.footer {
+  &__container {
+    @extend %mr-ml-auto;
+
+    padding-top: 116px;
+    padding-left: 24px;
+    max-width: 428px;
+  }
+
+  &__branch-name {
+    font-size: $fs-x-lg;
+    font-weight: 600;
+  }
+
+  &__introduction .footer__description {
+    margin-top: 10px;
+    font-size: $fs-md;
+    max-width: 325px;
+  }
+
+  &__social-media {
+    @extend %d-flex;
+    @include flex-layout($gap: 30px);
+    margin-top: 22.6px;
+  }
+
+  &__information {
+    @extend %d-flex;
+    @include flex-layout($gap: 80px);
+
+    padding-top: 30px;
+  }
+
+  &__heading {
+    font-size: $fs-lg;
+    font-weight: 600;
+  }
+
+  &__link {
+    @extend %d-flex;
+    @include flex-layout($direction: column, $gap: 14px);
+
+    margin-top: 17px;
+  }
+
+  &__contact {
+    margin-top: 30px;
+  }
+
+  &__contact .footer__description {
+    max-width: 379px;
+    color: $black;
+    margin-top: 37px;
+    font-size: $fs-md;
+  }
+
+  &__form {
+    @include size(378px, auto);
+
+    margin-top: 27px;
+  }
+
+  &__email-input {
+    @include size(178px, 48px);
+
+    margin-right: 15px;
+    border-radius: 40px;
+    padding-left: 25px;
+    border: none;
+    background-color: #e8e8e8;
+  }
+
+  &__submit-btn {
+    @include size(118px, 50px);
+
+    border-radius: 40px;
+    color: $white;
+    background-color: $primary-color;
+    border: none;
+  }
+
+  &__copyright {
+    @extend %mr-ml-auto;
+    @include size(fit-content, auto);
+
+    margin-top: 80px;
+    padding-bottom: 29px;
+  }
+}
+
+@media screen and (min-width: 840px) {
+  .footer {
+    &__container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1440px;
+      width: auto;
+      padding-inline: 90px;
+      column-gap: 10px;
+    }
+
+    &__introduction {
+      @include size(fit-content, fit-content);
+
+      margin: auto 0;
+      grid-row: 1 / span 2;
+      max-width: 400px;
+    }
+
+    &__contact {
+      grid-column: -2;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer {
+    &__container {
+      grid-template-columns: auto auto auto;
+      padding-left: 135px;
+      column-gap: 10px;
+    }
+
+    &__introduction {
+      margin-top: 15px;
+    }
+  }
+}
