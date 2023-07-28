@@ -1,0 +1,40 @@
+- var image_footer_path = "./assets/images/footer/";
+- var about_us_links = ["About Us", "Service Us", "Contact", "Company"];
+- var company_links = ["Partnership", "Terms of Use", "Privacy", "Sitemap"];
+
+footer.footer
+  .footer__container
+    .footer__introduction
+      p.footer__branch-name.primary-text Foodhut
+      p.footer__description Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      .footer__social-media
+        img.facebook-icon(
+          src=image_footer_path + "facebook.png",
+          alt="Facebook icon"
+        )
+        img.instagram-icon(
+          src=image_footer_path + "instagram.png",
+          alt="Instagram icon"
+        )
+        img.twitter-icon(
+          src=image_footer_path + "twitter.png",
+          alt="Twitter icon"
+        )
+    .footer__information
+      .footer__about-us
+        h3.footer__heading.primary-text About Us
+          .footer__link
+            each item in about_us_links 
+              p.link-text= item
+      .footer_company
+        h3.footer__heading.primary-text Company
+          .footer__link
+            each item in company_links 
+              p.link-text= item
+    .footer__contact
+      h3.footer__heading.primary-text Get in touch
+      p.footer__description Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      form.footer__form(action="#")
+        input.footer__email-input(type="text", placeholder="Email")
+        button.footer__submit-btn(type="submit") Subscribe
+  p.footer__copyright Copyright &copy 2022 Foodhut.
