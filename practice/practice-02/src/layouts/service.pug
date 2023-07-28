@@ -1,5 +1,7 @@
 - var service_img_path = "./assets/images/service/";
-- var list_service_category = [{url_icon : service_img_path + "icon-1.png", content: "Online order"}, {url_icon : service_img_path + "icon-3.png", content: "Pre-Reservation"}, {url_icon : service_img_path + "icon-3.png", content: "Super chef"}, {url_icon : service_img_path + "icon-2.png", content: "24/7 Service"}, {url_icon : service_img_path + "icon-3.png", content: "Oragonized foodhut place"}, {url_icon : service_img_path + "icon-3.png", content: "Clean Kitchen"}];
+- var list_service_category_1 = [{url_icon : service_img_path + "icon-1.png", content: "Online order"}, {url_icon : service_img_path + "icon-3.png", content: "Pre-Reservation"}, {url_icon : service_img_path + "icon-3.png", content: "Super chef"}];
+- var list_service_category_2 = [{url_icon : service_img_path + "icon-2.png", content: "24/7 Service"}, {url_icon : service_img_path + "icon-3.png", content: "Oragonized foodhut place"}, {url_icon : service_img_path + "icon-3.png", content: "Clean Kitchen"}];
+- var list_service_category = [list_service_category_1, list_service_category_2];
 
 section.service
   .service__container
@@ -41,9 +43,13 @@ section.service
         = " service"
       p.service__description This is a type of resturent which typically serves food and drink, in addition to light refreshments such as baked goods or snacks. The term comes frome the rench word meaning food
       .service__category
-        .service__category-list
-          each val in list_service_category
-            .service__category-item
-              img.service__icon-category(src=val.url_icon, alt="Icon category")
-              p.service__name-category= val.content
+        each list in list_service_category
+          .service__category-list
+            each item in list
+              .service__category-item
+                img.service__icon-category(
+                  src=item.url_icon,
+                  alt="Icon category"
+                )
+                p.service__name-category= item.content
       a.service__btn.btn(href="javascript:void(0)") About us
