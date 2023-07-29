@@ -3,17 +3,18 @@
 
   position: relative;
   cursor: pointer;
+  top: -1px;
 
   &:before {
     @include icon-menu;
 
-    top: -10px;
+    top: -11px;
   }
 
   &:after {
     @include icon-menu;
 
-    top: 10px;
+    top: 11px;
   }
 }
 

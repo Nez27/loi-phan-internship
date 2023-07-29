@@ -9,13 +9,13 @@
 
     max-width: 380px;
     margin: auto;
-    padding-top: 101px;
+    padding-top: 90px;
     position: relative;
   }
 
   &__dot-background {
     @extend %absolute;
-    @include set-absolute-and-location($top: 168px, $left: 0px);
+    @include set-location($top: 168px, $left: 0px);
 
     display: none;
   }
@@ -32,7 +32,7 @@
     text-transform: capitalize;
     text-align: center;
     color: $black;
-    margin-top: 15px;
+    margin-top: 22px;
     max-width: 856px;
     margin-inline: auto;
   }
@@ -42,7 +42,7 @@
     @include flex-layout($wrap: nowrap, $gap: 70px);
 
     padding-inline: 35px;
-    padding-top: 65px;
+    margin-top: 65px;
     overflow-x: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -54,7 +54,7 @@
 
   &__rosemary-container {
     @extend %absolute;
-    @include set-absolute-and-location($bottom: -120px, $right: 0);
+    @include set-location($bottom: -95px, $right: 0);
 
     z-index: 0;
   }
@@ -82,7 +82,22 @@
 }
 
 @media screen and (min-width: 1200px) {
-  .offer__dot-background {
-    display: block;
+  .offer {
+    &__dot-background {
+      display: block;
+    }
+
+    &__container {
+      padding-top: 142px;
+    }
+
+    &__description {
+      margin-top: 27px;
+      padding-left: 64px;
+    }
+
+    &__card-list {
+      margin-top: 67px;
+    }
   }
 }

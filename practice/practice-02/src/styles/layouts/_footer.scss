@@ -11,21 +11,33 @@
     max-width: 428px;
   }
 
-  &__branch-name {
+  &__brand-name {
     font-size: $fs-x-lg;
     font-weight: 600;
   }
 
   &__introduction .footer__description {
-    margin-top: 10px;
+    margin-top: 8 px;
     font-size: $fs-md;
     max-width: 325px;
   }
 
   &__social-media {
     @extend %d-flex;
-    @include flex-layout($gap: 30px);
+    @include flex-layout($gap: 30px, $align: center);
     margin-top: 22.6px;
+  }
+
+  &__social-link:first-child {
+    @include size(auto, 21px);
+  }
+
+  &__social-link:nth-child(2) {
+    @include size(auto, 19px);
+  }
+
+  &__social-link:nth-child(3) {
+    @include size(auto, 17px);
   }
 
   &__information {
@@ -87,6 +99,8 @@
     @extend %mr-ml-auto;
     @include size(fit-content, auto);
 
+    font-size: $fs-x-sm;
+    font-family: $secondary-font;
     margin-top: 80px;
     padding-bottom: 29px;
   }
@@ -97,7 +111,7 @@
     &__container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      max-width: 1440px;
+      max-width: $max-width;
       width: auto;
       padding-inline: 90px;
       column-gap: 10px;
@@ -126,7 +140,21 @@
     }
 
     &__introduction {
-      margin-top: 15px;
+      padding-top: 119px;
+      padding-left: 112px;
+    }
+
+    &__information {
+      padding-top: 155px;
+    }
+
+    &__description {
+      margin-top: 9px;
+      padding-left: 1px;
+    }
+
+    &__contact {
+      padding-top: 125px;
     }
   }
 }

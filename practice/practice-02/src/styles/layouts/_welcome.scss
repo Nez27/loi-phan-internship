@@ -10,13 +10,15 @@
     rgba(245, 71, 72, 0) 100%
   );
 
+  padding-top: 50px;
+
   &__container {
     @extend %d-flex;
     @include flex-layout($justify: center, $direction: column);
 
     margin: auto;
     max-width: 428px;
-    padding-top: 117px;
+    padding-top: 67px;
   }
   // Start banner
   &__banner-container {
@@ -27,25 +29,60 @@
     position: relative;
   }
 
-  &__banner-img {
+  &__main-image {
+    text-align: right;
+    padding-right: 25px;
     z-index: 1;
+  }
+
+  &__food-img:nth-child(2) {
+    @extend %absolute;
+    @include set-location($bottom: 75px, $left: 12px);
+  }
+
+  &__food-img:nth-child(3) {
+    @extend %absolute;
+    @include set-location($bottom: -7px, $left: 110);
+  }
+
+  &__food-img:nth-child(4) {
+    @extend %absolute;
+    @include set-location($bottom: 0px, $right: 80px);
+  }
+
+  &__food-img:nth-child(5) {
+    @extend %absolute;
+    @include set-location($bottom: 85px, $right: 15px);
+  }
+
+  &__review-card {
+    @extend %absolute;
+    @include set-location($top: 100px, $left: 10px);
+  }
+
+  &__rate-card {
+    @extend %absolute;
+    @include set-location($top: 103px, $right: 0);
+  }
+
+  &__background-banner {
+    @extend %absolute;
+    @include size(100%, 100%);
   }
 
   &__lines-background {
     @extend %absolute;
-    @include set-absolute-and-location($top: -76px, $right: 0);
-    @include size(187px, 430px);
+    @include set-location($top: -85px, $right: 1px);
   }
 
   &__arrow-img-up {
     @extend %absolute;
-    @include set-absolute-and-location($top: -15px, $right: 50px);
-    @include size(43px, 215px);
+    @include set-location($top: -15px, $right: 40px);
   }
 
   &__mint-img {
     @extend %absolute;
-    @include set-absolute-and-location($bottom: 100px, $right: 0);
+    @include set-location($bottom: 90px, $right: 0px);
   }
   // End banner
 
@@ -56,7 +93,7 @@
     @include flex-layout($direction: column);
 
     position: relative;
-    padding-top: 63.37px;
+    padding-top: 58px;
     padding-inline: 24px;
   }
 
@@ -68,7 +105,7 @@
 
   &__orange-img-wrapper {
     @extend %absolute;
-    @include set-absolute-and-location($top: 0, $right: 35px);
+    @include set-location($top: 7px, $right: 0);
   }
 
   &__text-box {
@@ -78,7 +115,8 @@
 
     background-color: #feeae9;
     border-radius: 100px;
-    padding: 6px;
+    padding: 4px;
+    margin-left: 10px;
     font-size: $fs-xx-sm;
   }
 
@@ -97,11 +135,11 @@
   &__head-arrow-container {
     @include size(13px, 7.3px);
     @extend %absolute;
-    @include set-absolute-and-location($right: 107px);
+    @include set-location($right: 107px);
   }
 
   &__heading {
-    margin-top: 20px;
+    margin-top: 12px;
     font-size: $fs-xx-lg;
     text-transform: capitalize;
     font-weight: 900;
@@ -110,11 +148,11 @@
 
   &__underline-img-container {
     @extend %absolute;
-    @include set-absolute-and-location($bottom: -20px, $left: 0px);
+    @include set-location($bottom: -27px, $left: 0px);
   }
 
   &__description {
-    margin-top: 35px;
+    margin-top: 40px;
     font-size: $fs-x-md;
     line-height: 140%;
     letter-spacing: -0.2px;
@@ -158,7 +196,7 @@
     cursor: pointer;
 
     &:hover {
-      background-color: #f7d699;
+      background-color: $secondary-light-color;
       transition: 0.2s;
     }
   }
@@ -168,7 +206,7 @@
     @include flex-layout($justify: space-between, $gap: 10px);
 
     width: 100%;
-    margin-top: 44px;
+    margin-top: 35px;
     max-width: 376px;
   }
 
@@ -200,7 +238,7 @@
     padding: 17.5px 20px;
     border-radius: 50px;
     background-color: $white;
-    box-shadow: 0 40px 50px 3px rgba($color: $primary-color, $alpha: 0.5);
+    box-shadow: 0 25px 50px 3px rgba($color: $primary-color, $alpha: 0.4);
     transition: width 0.5s;
     line-height: 100%;
   }
@@ -236,8 +274,8 @@
     &__container {
       @include flex-layout(
         $direction: row-reverse,
-        $align: center,
-        $justify: space-between
+        $justify: space-between,
+        $align: center
       );
 
       padding-top: 130px;
@@ -245,48 +283,18 @@
       max-width: $max-width;
     }
 
-    // Start banner
-    &__banner-img {
-      @include size(100%, 100%);
-
-      max-width: 650px;
-    }
-
-    &__lines-background {
-      @include set-absolute-and-location($top: -150px, $right: 0px);
-      @include size(313px, 718px);
-    }
-
-    &__arrow-img-up {
-      @include size(117px, 315px);
-      @include set-absolute-and-location($top: -40px, $right: 5px);
-
-      transition: 0.2s;
-    }
-
-    &__head-arrow-container {
-      display: none;
-    }
-
-    &__banner-container {
-      @include size(auto, auto);
-
-      max-width: 1000px;
-      min-width: 500px;
-    }
-    // End banner
-
     // Start content
     &__content {
       @include size(auto, auto);
 
       padding-left: 70px;
       padding-right: 0px;
+      padding-top: 70px;
       max-width: 560px;
     }
 
     &__orange-img-wrapper {
-      @include set-absolute-and-location($top: 170px, $right: -50px);
+      @include set-location($top: 170px, $right: -50px);
 
       transition: 0.2s;
     }
@@ -297,7 +305,7 @@
     }
 
     &__underline-img-container {
-      @include set-absolute-and-location($bottom: -25px, $left: 8px);
+      @include set-location($bottom: -25px, $left: 8px);
     }
 
     &__description {
@@ -317,7 +325,7 @@
     }
 
     &__arrow-down-img-wrapper {
-      @include set-absolute-and-location($top: -50px, $left: 220px);
+      @include set-location($top: -50px, $left: 220px);
 
       display: block;
       transition: 0.2s;
@@ -329,7 +337,7 @@
 
     &__slider-container {
       display: block;
-      @include set-absolute-and-location($bottom: -135px, $left: 65px);
+      @include set-location($bottom: -135px, $left: 65px);
     }
 
     // End content
@@ -338,20 +346,85 @@
 
 @media screen and (min-width: 1200px) {
   .welcome {
+    padding-top: 0px;
+
+    // Start banner
+    &__banner {
+      padding-right: 96px;
+    }
+
     &__banner-container {
-      padding-right: 74px;
+      @include size(100%, auto);
+    }
+
+    &__main-image {
+      padding-right: 29px;
     }
 
     &__arrow-img-up {
-      @include set-absolute-and-location($top: 8px, $right: 62px);
+      @include set-location($top: 4px, $right: -34px);
     }
 
     &__orange-img-wrapper {
-      @include set-absolute-and-location($top: 110px, $right: -50px);
+      @include set-location($top: 110px, $right: -50px);
     }
 
     &__arrow-down-img-wrapper {
-      @include set-absolute-and-location($top: -75px, $left: 230px);
+      @include set-location($top: -40px, $left: 223px);
+    }
+
+    &__lines-background {
+      @include set-location($top: -85px, $right: -98px);
+    }
+
+    &__review-card {
+      @include set-location($top: 160px, $left: -47px);
+    }
+
+    &__rate-card {
+      @include set-location($top: 168px, $right: -62px);
+    }
+
+    &__food-img:nth-child(2) {
+      @include set-location($bottom: 108px, $left: -68px);
+    }
+
+    &__food-img:nth-child(3) {
+      @include set-location($bottom: -29px, $left: 102);
+    }
+
+    &__food-img:nth-child(4) {
+      @include set-location($bottom: -19px, $right: 107px);
+    }
+
+    &__food-img:nth-child(5) {
+      @include set-location($bottom: 125px, $right: -1px);
+    }
+
+    // End banner
+
+    &__container {
+      @include flex-layout($align: unset, $gap: 50px);
+    }
+
+    &__content {
+      padding-top: 81px;
+    }
+
+    &__text-box {
+      padding-left: 1px;
+    }
+
+    &__description {
+      margin-top: 29px;
+    }
+
+    &__search-form {
+      margin-top: 24px;
+    }
+
+    &__slider-container {
+      @include set-location($bottom: -58px, $left: 68px);
     }
   }
 }

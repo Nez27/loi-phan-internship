@@ -1,0 +1,48 @@
+- var platform_image_path = "./assets/images/platform/";
+- var list_food_image_path = [{mobile_image_path: platform_image_path + "food-1-mobile.png", desktop_image_path: platform_image_path + "food-1-desktop.png"}, {mobile_image_path: platform_image_path + "food-2-mobile.png", desktop_image_path: platform_image_path + "food-2-desktop.png"}, {mobile_image_path: platform_image_path + "food-3-mobile.png", desktop_image_path: platform_image_path + "food-3-desktop.png"}, {mobile_image_path: platform_image_path + "food-4-mobile.png", desktop_image_path: platform_image_path + "food-4-desktop.png"}];
+
+section.platform
+  .platform__container
+    .platform__image-container
+      each item in list_food_image_path 
+        picture.platform__image-food
+          source(media="(min-width: 1200px)", srcset=item.desktop_image_path)
+          img(src=item.mobile_image_path, alt="Food image")
+      picture
+        source(
+          media="(min-width: 1200px)",
+          srcset=platform_image_path + "background-desktop.png"
+        )
+        img.platform__background-img(
+          src=platform_image_path + "background-mobile.png",
+          alt="Background image"
+        )
+      picture
+        source(
+          media="(min-width: 1200px)",
+          srcset=platform_image_path + "main-image-desktop.png"
+        )
+        img.platform__main-image(
+          src=platform_image_path + "main-image-mobile.png",
+          alt="The image introduce the platform"
+        )
+    .platform__content
+      h2.platform__heading It's Now
+        = " "
+        span.primary-text More Easy
+        = " to "
+        span.secondary-text Order
+        = " by Our Mobile "
+        span.primary-text App
+      p.platform__description All you need to do is downlode one of the best delivery apps, make a and most companies are opting for mobile app devlopment for food delivery
+      .platform__store-container
+        .platform__google-store
+          img.platform__google-store-image(
+            src=platform_image_path + "chplay.png",
+            alt="Google store image"
+          )
+        .platform__app-store
+          img.platform__app-store-image(
+            src=platform_image_path + "app-store.png",
+            alt="App store image"
+          )
