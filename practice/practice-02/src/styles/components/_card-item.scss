@@ -11,14 +11,14 @@
 
 .food-image {
   @extend %absolute;
-  @include set-absolute-and-location($top: 29px);
+  @include set-location($top: 29px);
 
   margin: auto;
 }
 
 .price {
   @extend %absolute;
-  @include set-absolute-and-location($top: 176px, $right: 70px);
+  @include set-location($top: 176px, $right: 70px);
   @include size(52px, 52px);
 
   color: $white;
@@ -32,13 +32,17 @@
 
 .content-card {
   @extend %d-flex, %align-center-col, %absolute;
-  @include set-absolute-and-location($bottom: 60px);
+  @include set-location($bottom: 72px);
   @include size(100%, auto);
 }
 
 .rate {
   @extend %d-flex;
   @include flex-layout($align: center, $gap: 10px);
+}
+
+.rate-point {
+  font-size: $fs-md;
 }
 
 .star-container {
@@ -54,21 +58,21 @@
 .avatar {
   &:first-child {
     @extend %absolute;
-    @include set-absolute-and-location($left: 38px);
+    @include set-location($left: 38px);
 
     z-index: 2;
   }
 
   &:nth-child(2) {
     @extend %absolute;
-    @include set-absolute-and-location($left: 19px);
+    @include set-location($left: 19px);
 
     z-index: 1;
   }
 
   &:last-child {
     @extend %absolute;
-    @include set-absolute-and-location($left: 0);
+    @include set-location($left: 0);
   }
 }
 
@@ -83,7 +87,7 @@
   @include size(100%, auto);
 
   max-width: 243px;
-  margin-top: 16px;
+  margin-top: 13px;
   text-align: center;
   text-transform: capitalize;
   color: $black;
@@ -91,7 +95,7 @@
 
 .order-btn {
   @extend %absolute;
-  @include set-absolute-and-location($bottom: 0px);
+  @include set-location($bottom: 0px);
 
   padding: 10px 20px;
   text-transform: capitalize;

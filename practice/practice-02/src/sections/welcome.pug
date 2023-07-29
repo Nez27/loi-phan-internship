@@ -1,36 +1,71 @@
 - var welcome_img_path = "./assets/images/welcome/";
+- var list_food_image_mobile = [{img_mobile_path: welcome_img_path + "food-1-mobile.png", img_desktop_path: welcome_img_path + "food-1-desktop.png"}, {img_mobile_path: welcome_img_path + "food-2-mobile.png", img_desktop_path: welcome_img_path + "food-2-desktop.png"}, {img_mobile_path: welcome_img_path + "food-3-mobile.png", img_desktop_path: welcome_img_path + "food-3-desktop.png"}, {img_mobile_path: welcome_img_path + "food-4-mobile.png", img_desktop_path: welcome_img_path + "food-4-desktop.png"}];
 
 section.welcome
   .welcome__container
     .welcome__banner
       .welcome__banner-container
-        img.welcome__banner-img(
-          src=welcome_img_path + "welcome-image-mobile.png",
-          alt="Welcome banner image"
-        )
-        picture
-          source(
-            media="(min-width: 840px)",
-            srcset=welcome_img_path + "lines-background-desktop.png"
-          )
-          img.welcome__lines-background(
-            src=welcome_img_path + "lines-background-mobile.png",
-            alt="Lines background"
-          )
-        picture
-          source(
-            media="(min-width: 840px)",
-            srcset=welcome_img_path + "arrow-desktop.png",
-            alt="Arrow image"
-          )
-          img.welcome__arrow-img-up(
-            src=welcome_img_path + "arrow-mobile.png",
-            alt="Arrow image"
-          )
-        img.welcome__mint-img(
-          src=welcome_img_path + "mint.png",
-          alt="Mint image"
-        )
+        .welcome__main-image
+          picture
+            source(
+              media="(min-width: 1200px)",
+              srcset=welcome_img_path + "welcome-image-desktop.png"
+            )
+            img.welcome__banner-img(
+              src=welcome_img_path + "welcome-image-mobile.png",
+              alt="Welcome banner image"
+            )
+          each item in list_food_image_mobile
+            picture.welcome__food-img
+              source(media="(min-width: 1200px)", srcset=item.img_desktop_path)
+              img(src=item.img_mobile_path, alt="Food image")
+          picture
+            source(
+              media="(min-width: 1200px)",
+              srcset=welcome_img_path + "review-card-desktop.png"
+            )
+            img.welcome__review-card(
+              src=welcome_img_path + "review-card-mobile.png",
+              alt="Review card"
+            )
+          picture
+            source(
+              media="(min-width: 1200px)",
+              srcset=welcome_img_path + "rate-card-desktop.png"
+            )
+            img.welcome__rate-card(
+              src=welcome_img_path + "rate-card-mobile.png",
+              alt="Review card"
+            )
+        .welcome__background-banner
+          picture
+            source(
+              media="(min-width: 1200px)",
+              srcset=welcome_img_path + "lines-background-desktop.png"
+            )
+            img.welcome__lines-background(
+              src=welcome_img_path + "lines-background-mobile.png",
+              alt="Lines background"
+            )
+          picture
+            source(
+              media="(min-width: 1200px)",
+              srcset=welcome_img_path + "arrow-desktop.png",
+              alt="Arrow image"
+            )
+            img.welcome__arrow-img-up(
+              src=welcome_img_path + "arrow-mobile.png",
+              alt="Arrow image"
+            )
+          picture
+            source(
+              media="(min-width: 1200px)",
+              srcset=welcome_img_path + "mint-desktop.png"
+            )
+            img.welcome__mint-img(
+              src=welcome_img_path + "mint-mobile.png",
+              alt="Mint image"
+            )
     .welcome__content
       .welcome__arrow-down-img-wrapper
         img.welcome__arrow-img-down(

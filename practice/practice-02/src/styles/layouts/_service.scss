@@ -10,7 +10,7 @@
 
   &__background-color {
     @extend %absolute;
-    @include set-absolute-and-location($top: 200px, $left: 0);
+    @include set-location($top: 200px, $left: 0);
     @include size(100%, 50%);
 
     background: linear-gradient(
@@ -30,20 +30,21 @@
 
   &__background-img {
     @extend %absolute;
-    @include set-absolute-and-location($top: 65px, $left: 0);
+    @include set-location($top: 75px, $left: 0);
   }
 
   &__main-img {
     @extend %absolute;
-    @include set-absolute-and-location($top: 60px, $left: 35px);
+    @include set-location($top: 70px, $left: 35px);
   }
 
   &__vegetable-img {
     @extend %absolute;
-    @include set-absolute-and-location($bottom: 0, $left: 50px);
+    @include set-location($bottom: -10px, $left: 50px);
   }
 
   &__content {
+    margin-top: 65px;
     padding-inline: 24px;
 
     z-index: 1;
@@ -70,14 +71,14 @@
     @include flex-layout(
       $direction: column,
       $justify: space-between,
-      $gap: 41px
+      $gap: 40px
     );
 
     max-width: 514px;
     margin-top: 81px;
     &-list {
       @extend %d-flex;
-      @include flex-layout($direction: column, $gap: 30px, $justify: center);
+      @include flex-layout($direction: column, $gap: 33px, $justify: center);
     }
   }
 
@@ -88,6 +89,7 @@
 
   &__name-category {
     font-size: $fs-md;
+    text-transform: capitalize;
   }
 
   &__btn {
@@ -130,12 +132,12 @@
     }
 
     &__background-img {
-      @include set-absolute-and-location($top: 100px, $left: 0);
+      @include set-location($top: 100px, $left: 0);
       @extend %absolute_840;
     }
 
     &__background-color {
-      @include set-absolute-and-location($top: 400px, $left: -100px);
+      @include set-location($top: 400px, $left: -100px);
       @include size(400px, 50%);
 
       border-radius: 50%;
@@ -149,12 +151,12 @@
     }
 
     &__main-img {
-      @include set-absolute-and-location($top: 95px, $left: 35px);
+      @include set-location($top: 95px, $left: 35px);
       @extend %absolute_840;
     }
 
     &__vegetable-img {
-      @include set-absolute-and-location($bottom: 145px, $left: 50px);
+      @include set-location($bottom: 145px, $left: 50px);
       @extend %absolute_840;
     }
 
@@ -186,12 +188,12 @@
     }
 
     &__background-img {
-      @include set-absolute-and-location($top: 0px, $left: 0);
+      @include set-location($top: 0px, $left: 0);
       @extend %absolute_1200;
     }
 
     &__background-color {
-      @include set-absolute-and-location($left: -150px);
+      @include set-location($left: -150px);
       @include size(500px, 50%);
 
       border-radius: 50%;
@@ -212,17 +214,24 @@
     }
 
     &__main-img {
-      @include set-absolute-and-location($top: -17px, $left: 70px);
-      @extend %absolute_1200;
+      @include set-location($top: 45px, $left: 70px);
     }
 
     &__vegetable-img {
-      @include set-absolute-and-location($bottom: 95px, $left: 105px);
-      @extend %absolute_1200;
+      @include set-location($bottom: 35px, $left: 92px);
+    }
+
+    &__background-img {
+      @include set-location($top: 55px, $left: 0);
+    }
+
+    &__category-list {
+      @include flex-layout($gap: 34px);
     }
 
     &__content {
-      padding-top: 50px;
+      padding-top: 78px;
+      padding-left: 29px;
     }
   }
 }

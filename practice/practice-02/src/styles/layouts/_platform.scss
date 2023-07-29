@@ -18,16 +18,45 @@
 
     position: relative;
     max-width: 100%;
+    text-align: right;
   }
 
   &__main-image {
     @extend %absolute;
-    @include set-absolute-and-location($top: 0, $right: 0);
+    @include set-location($top: 0px, $left: 60px);
+  }
+
+  &__image-food:first-child {
+    @extend %absolute;
+    @include set-location($bottom: 54px, $right: 163px);
+
+    z-index: 1;
+  }
+
+  &__image-food:nth-child(2) {
+    @extend %absolute;
+    @include set-location($bottom: 67px, $right: 118px);
+
+    z-index: 1;
+  }
+
+  &__image-food:nth-child(3) {
+    @extend %absolute;
+    @include set-location($bottom: 92px, $right: 75px);
+
+    z-index: 1;
+  }
+
+  &__image-food:nth-child(4) {
+    @extend %absolute;
+    @include set-location($bottom: 147px, $right: 45px);
+
+    z-index: 1;
   }
 
   &__content {
-    padding-top: 52px;
-    padding-left: 20px;
+    padding-top: 46px;
+    padding-left: 25px;
   }
 
   &__heading {
@@ -39,7 +68,7 @@
   &__description {
     font-size: $fs-md;
     color: $black;
-    margin-top: 23px;
+    margin-top: 31px;
     max-width: 366px;
   }
 
@@ -57,17 +86,39 @@
       @include flex-layout($direction: row-reverse, $align: center);
 
       display: flex;
-      max-width: 1440px;
+      max-width: $max-width;
       max-height: 632px;
       padding-top: 50px;
     }
 
     &__image-container {
-      @include size(704px, 786px);
+      @include size(100%, 500px);
+    }
+
+    &__background-img {
+      @include set-location($top: 0px, $right: 0px);
+
+      position: absolute;
     }
 
     &__main-image {
-      @include set-absolute-and-location($top: 160px, $right: 0);
+      @include set-location($top: 0px, $right: 58px, $left: unset);
+    }
+
+    &__image-food:first-child {
+      @include set-location($bottom: 53px, $right: 160px);
+    }
+
+    &__image-food:nth-child(2) {
+      @include set-location($bottom: 68px, $right: 117px);
+    }
+
+    &__image-food:nth-child(3) {
+      @include set-location($bottom: 90px, $right: 70px);
+    }
+
+    &__image-food:nth-child(4) {
+      @include set-location($bottom: 145px, $right: 43px);
     }
 
     &__heading {
@@ -83,11 +134,50 @@
 @media screen and (min-width: 1200px) {
   .platform {
     &__container {
-      padding-top: 170px;
+      @include flex-layout($justify: space-between);
+
+      display: flex;
+      padding-top: 122px;
+    }
+
+    &__image-container {
+      @include size(600px, 632px);
+
+      text-align: right;
     }
 
     &__main-image {
-      @include set-absolute-and-location($top: 70px, $right: 0);
+      @include set-location($top: 20px, $right: 105px);
+    }
+
+    &__background-img {
+      @include set-location($top: 20px, $right: 00px);
+    }
+
+    &__image-food:first-child {
+      @include set-location($bottom: -65px, $right: 263px);
+    }
+
+    &__image-food:nth-child(2) {
+      @include set-location($bottom: -40px, $right: 190px);
+    }
+
+    &__image-food:nth-child(3) {
+      @include set-location($bottom: -8px, $right: 125px);
+    }
+
+    &__image-food:nth-child(4) {
+      @include set-location($bottom: 80px, $right: 80px);
+    }
+
+    &__heading,
+    &__description,
+    &__store-container {
+      padding-left: 47px;
+    }
+
+    &__description {
+      margin-top: 52px;
     }
   }
 }

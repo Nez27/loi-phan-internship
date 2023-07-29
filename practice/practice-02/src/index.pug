@@ -13,16 +13,11 @@ html(lang="en")
     )
     title Food Hut
   body
-    header.header
-      .header-container
-        .logo-wrapper
-          a.logo-link(href="javascript:void(0)")
-            img.logo(src="./assets/images/logo.svg", alt="Food Hut logo")
-        .header-content
-          include layouts/nav-menu
-    include layouts/welcome
-    include layouts/offer
-    include layouts/service
-    include layouts/menu
-    include layouts/platform
+    include layouts/header
+    main
+      include sections/welcome
+      include sections/offer
+      include sections/service
+      include sections/menu
+      include sections/platform
     include layouts/footer

@@ -10,6 +10,7 @@
   right: 25px;
   background-color: $white;
   z-index: 2;
+  border-radius: 20px;
 }
 
 .nav-download-btn {
@@ -27,8 +28,8 @@
     border-bottom: unset;
   }
 
-  &:hover {
-    background-color: $secondary-color;
+  &:hover .nav-link {
+    color: $secondary-color;
   }
 }
 
@@ -67,13 +68,9 @@
     border-bottom: none;
     padding: 0;
     text-align: center;
-
-    &:hover {
-      background-color: unset;
-    }
   }
 
-  .nav-link:hover {
-    color: $secondary-color;
-  }
+  // .nav-link:hover {
+  //   color: $secondary-color;
+  // }
 }
