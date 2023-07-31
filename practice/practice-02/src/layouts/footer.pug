@@ -28,12 +28,12 @@ footer.footer
         h3.footer__heading.primary-text About Us
           .footer__link
             each item in about_us_links 
-              p.link-text= item
+              a.link-text(href="javascript:void(0)")= item
       .footer_company
         h3.footer__heading.primary-text Company
           .footer__link
             each item in company_links 
-              p.link-text= item
+              a.link-text(href="javascript:void(0)")= item
     .footer__contact
       h3.footer__heading.primary-text Get in touch
       p.footer__description Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

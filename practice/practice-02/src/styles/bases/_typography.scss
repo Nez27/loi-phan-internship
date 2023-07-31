@@ -1,5 +1,9 @@
 $font-path: "../assets/fonts";
 
+%fs-100 {
+  font-size: 100%;
+}
+
 @font-face {
   font-family: "Sofia Pro";
   src: url("#{$font-path}/sofia-pro-regular.woff2") format("woff2"),
@@ -43,4 +47,26 @@ $font-path: "../assets/fonts";
 * {
   font-family: $primary-font;
   line-height: normal;
+  font-size: $fs-md;
+}
+
+.link-text {
+  color: $black;
+  text-decoration: none;
+}
+
+.link-text:hover {
+  color: $secondary-color;
+}
+
+.primary-text {
+  @extend %fs-100;
+
+  color: $primary-color;
+}
+
+.secondary-text {
+  @extend %fs-100;
+
+  color: $secondary-color;
 }

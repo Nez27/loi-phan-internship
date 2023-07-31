@@ -1,16 +1,21 @@
 - var list = ["Today Special Offers", "Why FoodHut", "Our Menu", "Our Popular Food"];
 
 header.header
-  .header-container
-    .logo-wrapper
-      a.logo-link(href="javascript:void(0)")
-        img.logo(src="./assets/images/logo.svg", alt="Food Hut logo")
-    .header-content
+  .header__container
+    .header__logo-wrapper
+      a.header__logo-link(href="javascript:void(0)")
+        picture
+          source(
+            media="(min-width: 840px)",
+            srcset="./assets/images/logo-desktop.png"
+          )
+          img.logo(src="./assets/images/logo-mobile.png", alt="Food Hut logo")
+    .header__content
       nav.nav
-        input.toggle-menu(type="checkbox")
-        .icon-menu
-        ul.nav-list
+        input.nav__toggle-menu(type="checkbox")
+        .nav__icon-menu
+        ul.nav__list
           each val in list
-            li.nav-item
-              a.nav-link.link-text(href="javascript:void(0)")= val
-      a.btn.nav-download-btn(href="javascript:void(0)") Download App
+            li.nav__item-wrapper
+              a.nav__link.link-text(href="javascript:void(0)")= val
+      a.btn.nav__download-btn(href="javascript:void(0)") Download App

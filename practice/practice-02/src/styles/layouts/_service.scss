@@ -52,7 +52,6 @@
 
   &__heading {
     margin-top: 30px;
-    margin-inline: auto;
     font-size: $fs-xx-lg;
     line-height: 129.9%;
     font-weight: 700;
@@ -63,7 +62,6 @@
     margin-top: 29px;
     margin-inline: auto;
     max-width: 381px;
-    font-size: $fs-md;
   }
 
   &__category {
@@ -88,14 +86,12 @@
   }
 
   &__name-category {
-    font-size: $fs-md;
     text-transform: capitalize;
   }
 
   &__btn {
-    display: block;
+    display: inline-block;
     margin-top: 43px;
-    max-width: 74px;
     text-transform: capitalize;
     padding: 10px 20px;
 
@@ -188,7 +184,7 @@
     }
 
     &__background-img {
-      @include set-location($top: 0px, $left: 0);
+      @include set-location($top: 0, $left: 0);
       @extend %absolute_1200;
     }
 

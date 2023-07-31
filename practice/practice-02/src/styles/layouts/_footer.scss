@@ -17,8 +17,7 @@
   }
 
   &__introduction .footer__description {
-    margin-top: 8 px;
-    font-size: $fs-md;
+    margin-top: 8px;
     max-width: 325px;
   }
 
@@ -60,14 +59,13 @@
   }
 
   &__contact {
-    margin-top: 30px;
+    padding-top: 30px;
   }
 
   &__contact .footer__description {
     max-width: 379px;
     color: $black;
     margin-top: 37px;
-    font-size: $fs-md;
   }
 
   &__form {
@@ -84,6 +82,7 @@
     padding-left: 25px;
     border: none;
     background-color: #e8e8e8;
+    font-size: $fs-xx-sm;
   }
 
   &__submit-btn {
@@ -93,16 +92,22 @@
     color: $white;
     background-color: $primary-color;
     border: none;
+    cursor: pointer;
+    font-size: $fs-xx-sm;
+
+    &:hover {
+      background-color: $secondary-color;
+    }
   }
 
   &__copyright {
     @extend %mr-ml-auto;
-    @include size(fit-content, auto);
 
     font-size: $fs-x-sm;
     font-family: $secondary-font;
     margin-top: 80px;
     padding-bottom: 29px;
+    text-align: center;
   }
 }
 
@@ -136,7 +141,7 @@
     &__container {
       grid-template-columns: auto auto auto;
       padding-left: 135px;
-      column-gap: 10px;
+      column-gap: 40px;
     }
 
     &__introduction {
@@ -145,6 +150,9 @@
     }
 
     &__information {
+      @include flex-layout($justify: space-between, $gap: 30px);
+
+      max-width: 304px;
       padding-top: 155px;
     }
 
@@ -154,7 +162,7 @@
     }
 
     &__contact {
-      padding-top: 125px;
+      padding-top: 155px;
     }
   }
 }

@@ -1,25 +1,11 @@
-%d-flex {
-  display: flex;
-}
+@mixin size($width: null, $height: null) {
+  @if $width != null {
+    width: $width;
+  }
 
-%absolute {
-  position: absolute;
-}
-
-@mixin base-icon-menu {
-  @include size(36px, 5px);
-
-  background: #000000;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-@mixin icon-menu {
-  @include base-icon-menu;
-  @extend %absolute;
-
-  content: "";
-  right: 0;
+  @if $height != null {
+    height: $height;
+  }
 }
 
 @mixin flex-layout(
@@ -50,16 +36,6 @@
   }
 }
 
-@mixin size($width: null, $height: null) {
-  @if $width != null {
-    width: $width;
-  }
-
-  @if $height != null {
-    height: $height;
-  }
-}
-
 @mixin set-location($top: null, $left: null, $right: null, $bottom: null) {
   @if $top != null {
     top: $top;
@@ -76,4 +52,28 @@
   @if $bottom != null {
     bottom: $bottom;
   }
+}
+
+@mixin base-icon-menu {
+  @include size(36px, 5px);
+
+  background: #000000;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+%d-flex {
+  display: flex;
+}
+
+%absolute {
+  position: absolute;
+}
+
+.line-icon-menu {
+  @include base-icon-menu;
+  @extend %absolute;
+
+  content: "";
+  right: 0;
 }
