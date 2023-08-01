@@ -23,7 +23,7 @@
 
   &__main-image {
     @extend %absolute;
-    @include set-location($top: 0px, $left: 60px);
+    @include set-location($top: 0, $left: 60px);
   }
 
   &__image-food:first-child {
@@ -66,7 +66,6 @@
   }
 
   &__description {
-    font-size: $fs-md;
     color: $black;
     margin-top: 31px;
     max-width: 366px;
@@ -80,29 +79,48 @@
   }
 }
 
+@media screen and (min-width: 600px) {
+  .platform {
+    &__container {
+      max-width: $max-width;
+    }
+
+    &__image-container {
+      width: fit-content;
+      margin-inline: auto;
+    }
+
+    &__main-image {
+      @include set-location($top: 0, $left: 28px);
+    }
+
+    &__heading,
+    &__description {
+      max-width: unset;
+    }
+  }
+}
+
 @media screen and (min-width: 840px) {
   .platform {
     &__container {
-      @include flex-layout($direction: row-reverse, $align: center);
+      @include flex-layout(
+        $direction: row-reverse,
+        $align: center,
+        $justify: space-between
+      );
 
+      // width: 100%;
       display: flex;
-      max-width: $max-width;
-      max-height: 632px;
       padding-top: 50px;
     }
 
     &__image-container {
-      @include size(100%, 500px);
-    }
-
-    &__background-img {
-      @include set-location($top: 0px, $right: 0px);
-
-      position: absolute;
+      margin-inline: unset;
     }
 
     &__main-image {
-      @include set-location($top: 0px, $right: 58px, $left: unset);
+      @include set-location($top: 0, $right: 58px, $left: unset);
     }
 
     &__image-food:first-child {
@@ -141,43 +159,35 @@
     }
 
     &__image-container {
-      @include size(600px, 632px);
+      @include size(auto, 632px);
 
+      padding-top: 20px;
       text-align: right;
     }
 
     &__main-image {
-      @include set-location($top: 20px, $right: 105px);
+      @include set-location($top: 20px, $right: 107px);
     }
 
-    &__background-img {
-      @include set-location($top: 20px, $right: 00px);
-    }
-
-    &__image-food:first-child {
-      @include set-location($bottom: -65px, $right: 263px);
-    }
-
-    &__image-food:nth-child(2) {
-      @include set-location($bottom: -40px, $right: 190px);
-    }
-
-    &__image-food:nth-child(3) {
-      @include set-location($bottom: -8px, $right: 125px);
-    }
-
+    &__image-food:first-child,
+    &__image-food:nth-child(2),
+    &__image-food:nth-child(3),
     &__image-food:nth-child(4) {
-      @include set-location($bottom: 80px, $right: 80px);
+      display: none;
+    }
+
+    &__content {
+      padding-top: 33px;
     }
 
     &__heading,
     &__description,
     &__store-container {
-      padding-left: 47px;
+      padding-left: 45px;
     }
 
     &__description {
-      margin-top: 52px;
+      margin-top: 58px;
     }
   }
 }

@@ -3,7 +3,6 @@
 }
 
 %style-category-item {
-  font-size: $fs-md;
   padding: 8px 18px;
   border-radius: 50px;
 }
@@ -40,7 +39,7 @@
     }
   }
 
-  &__category-item:focus {
+  &__category-item:first-child {
     @extend %style-category-item;
 
     color: $white;
@@ -73,7 +72,7 @@
   }
 }
 
-@media screen and (min-width: 840px) {
+@media screen and (min-width: 600px) {
   .menu {
     &__container {
       max-width: $max-width;
@@ -83,6 +82,16 @@
       max-width: 653px;
     }
 
+    &__card-list {
+      grid-auto-columns: unset;
+      grid-template-rows: 1fr 1fr;
+      row-gap: 66px;
+    }
+  }
+}
+
+@media screen and (min-width: 840px) {
+  .menu {
     &__list-category {
       margin-inline: 59px;
     }

@@ -1,43 +1,43 @@
-- var image_footer_path = "./assets/images/footer/";
-- var about_us_links = ["About Us", "Service Us", "Contact", "Company"];
-- var company_links = ["Partnership", "Terms of Use", "Privacy", "Sitemap"];
+- var image_footer_path = './assets/images/footer/';
+- var about_us_links = ['About Us', 'Service Us', 'Contact', 'Company'];
+- var company_links = ['Partnership', 'Terms of Use', 'Privacy', 'Sitemap'];
 
 footer.footer
   .footer__container
     .footer__introduction
-      p.footer__brand-name.primary-text Foodhut
+      p.footer__brand-name.text--primary Foodhut
       p.footer__description Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
       .footer__social-media
-        a.footer__social-link(href="javascript:void(0)")
+        a.footer__social-link(href='javascript:void(0)')
           img.facebook-icon(
-            src=image_footer_path + "facebook.png",
-            alt="Facebook icon"
+            src=image_footer_path + 'facebook.png',
+            alt='Facebook icon'
           )
-        a.footer__social-link(href="javascript:void(0)")
+        a.footer__social-link(href='javascript:void(0)')
           img.instagram-icon(
-            src=image_footer_path + "instagram.png",
-            alt="Instagram icon"
+            src=image_footer_path + 'instagram.png',
+            alt='Instagram icon'
           )
-        a.footer__social-link(href="javascript:void(0)")
+        a.footer__social-link(href='javascript:void(0)')
           img.twitter-icon(
-            src=image_footer_path + "twitter.png",
-            alt="Twitter icon"
+            src=image_footer_path + 'twitter.png',
+            alt='Twitter icon'
           )
     .footer__information
       .footer__about-us
-        h3.footer__heading.primary-text About Us
+        h3.footer__heading.text--primary About Us
           .footer__link
             each item in about_us_links 
-              p.link-text= item
+              a.link-text(href='javascript:void(0)')= item
       .footer_company
-        h3.footer__heading.primary-text Company
+        h3.footer__heading.text--primary Company
           .footer__link
             each item in company_links 
-              p.link-text= item
+              a.link-text(href='javascript:void(0)')= item
     .footer__contact
-      h3.footer__heading.primary-text Get in touch
+      h3.footer__heading.text--primary Get in touch
       p.footer__description Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-      form.footer__form(action="#")
-        input.footer__email-input(type="text", placeholder="Email")
-        button.footer__submit-btn(type="submit") Subscribe
+      form.footer__form(action='#')
+        input.footer__email-input(type='text', placeholder='Email')
+        button.footer__submit-btn(type='submit') Subscribe
   p.footer__copyright Copyright &copy 2022 Foodhut.

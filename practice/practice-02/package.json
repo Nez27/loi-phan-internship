@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Practice 02",
   "scripts": {
-    "start": "del -rf dist && del -rf .parcel-cache && parcel ./src/*.pug --no-cache --no-source-maps",
+    "start": "parcel ./src/*.pug --no-cache --no-source-maps",
     "build": "rm -rf build && rm -rf .parcel-cache && parcel build ./src/*.pug --no-cache --no-source-maps --dist-dir dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

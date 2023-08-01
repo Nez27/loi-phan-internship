@@ -1,22 +1,24 @@
-- var offer_img_path = "./assets/images/offer/";
+- var offer_img_path = './assets/images/offer/';
+- var avatar_img_path = './assets/images/avatar/';
+- var food_img_path = './assets/images/food/';
 
-- var food_1 = { imageUrl: offer_img_path + "food-1.png", price: "10", ratePoint: "4.5", foodName: "Kebab", foodDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry", avatarImageList: [{ avatarUrl: avatar_img_path + "avatar-1.png" }, { avatarUrl: avatar_img_path + "avatar-2.png" }, { avatarUrl: avatar_img_path + "avatar-3.png" }] };
-- var food_2 = { imageUrl: offer_img_path + "food-2.png", price: "15", ratePoint: "4.8", foodName: "Chicken Tikka", foodDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry", avatarImageList: [{ avatarUrl: avatar_img_path + "avatar-4.png" }, { avatarUrl: avatar_img_path + "avatar-5.png" }, { avatarUrl: avatar_img_path + "avatar-6.png" }] };
-- var food_3 = { imageUrl: offer_img_path + "food-3.png", price: "8", ratePoint: "4.2", foodName: "Desi Chowmein", foodDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry", avatarImageList: [{ avatarUrl: avatar_img_path + "avatar-7.png" }, { avatarUrl: avatar_img_path + "avatar-8.png" }, { avatarUrl: avatar_img_path + "avatar-9.png" }] };
-- var food_4 = { imageUrl: offer_img_path + "food-4.png", price: "28", ratePoint: "5.0", foodName: "Chicken Chargha", foodDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry", avatarImageList: [{ avatarUrl: avatar_img_path + "avatar-1.png" }, { avatarUrl: avatar_img_path + "avatar-2.png" }, { avatarUrl: avatar_img_path + "avatar-3.png" }] };
+- var food_1 = { imageUrl: food_img_path + 'food-1.png', price: '10', ratePoint: '4.5', foodName: 'Kebab', foodDescription: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', avatarImageList: [{ avatarUrl: avatar_img_path + 'avatar-1.png' }, { avatarUrl: avatar_img_path + 'avatar-2.png' }, { avatarUrl: avatar_img_path + 'avatar-3.png' }] };
+- var food_2 = { imageUrl: food_img_path + 'food-2.png', price: '15', ratePoint: '4.8', foodName: 'Chicken Tikka', foodDescription: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', avatarImageList: [{ avatarUrl: avatar_img_path + 'avatar-4.png' }, { avatarUrl: avatar_img_path + 'avatar-5.png' }, { avatarUrl: avatar_img_path + 'avatar-6.png' }] };
+- var food_3 = { imageUrl: food_img_path + 'food-3.png', price: '8', ratePoint: '4.2', foodName: 'Desi Chowmein', foodDescription: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', avatarImageList: [{ avatarUrl: avatar_img_path + 'avatar-7.png' }, { avatarUrl: avatar_img_path + 'avatar-8.png' }, { avatarUrl: avatar_img_path + 'avatar-9.png' }] };
+- var food_4 = { imageUrl: food_img_path + 'food-4.png', price: '28', ratePoint: '5.0', foodName: 'Chicken Chargha', foodDescription: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', avatarImageList: [{ avatarUrl: avatar_img_path + 'avatar-1.png' }, { avatarUrl: avatar_img_path + 'avatar-2.png' }, { avatarUrl: avatar_img_path + 'avatar-3.png' }] };
 - var list_food = [food_1, food_2, food_3, food_4];
 
 section.offer
   .offer__container
     .offer__dot-background
       img(
-        src=offer_img_path + "dot-background.png",
-        alt="Dot background image"
+        src=offer_img_path + 'dot-background.png',
+        alt='Dot background image'
       )
     h2.offer__heading Today
-      = " "
-      span.primary-text Special
-      = " Offers"
+      = ' '
+      span.text--primary Special
+      = ' Offers'
     p.offer__description Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
     .offer__card-list
       each val in list_food
@@ -24,7 +26,7 @@ section.offer
   .offer__rosemary-container
     picture
       source(
-        media="(min-width: 840px)",
-        srcset=offer_img_path + "rosemary-desktop.png"
+        media='(min-width: 840px)',
+        srcset=offer_img_path + 'rosemary-desktop.png'
       )
-      img(src=offer_img_path + "rosemary-mobile.png", alt="Rosemary image")
+      img(src=offer_img_path + 'rosemary-mobile.png', alt='Rosemary image')

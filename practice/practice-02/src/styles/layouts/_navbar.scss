@@ -1,40 +1,87 @@
-.nav-list {
-  @extend %absolute;
-  @include size(max-content, auto);
+.nav {
+  &__icon-menu {
+    @include base-icon-menu;
 
-  display: none;
-  list-style: none;
-  transition: 0.1s;
-  border: 2px solid $primary-color;
-  top: 100px;
-  right: 25px;
-  background-color: $white;
-  z-index: 2;
-  border-radius: 20px;
-}
+    position: relative;
+    cursor: pointer;
+    top: -5px;
 
-.nav-download-btn {
-  display: none;
+    &:before {
+      @extend .line-icon-menu;
 
-  z-index: 1;
-}
+      top: -11px;
+    }
 
-.nav-item {
-  font-size: $fs-xx-sm;
-  padding: 14px;
-  border-bottom: 1px solid $black;
+    &:after {
+      @extend .line-icon-menu;
 
-  &:last-child {
-    border-bottom: unset;
+      top: 11px;
+    }
   }
 
-  &:hover .nav-link {
-    color: $secondary-color;
-  }
-}
+  &__toggle-menu {
+    @extend %absolute;
+    @include size(36px, 27px);
 
-.nav-link {
-  color: $black;
+    top: 37px;
+    right: 21px;
+    cursor: pointer;
+    z-index: 1;
+    opacity: 0;
+  }
+
+  &__toggle-menu:checked ~ &__icon-menu {
+    background: transparent;
+  }
+
+  &__toggle-menu:checked ~ &__icon-menu:before {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  &__toggle-menu:checked ~ &__icon-menu:after {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  &__toggle-menu:checked ~ &__list {
+    display: block;
+  }
+
+  &__list {
+    @extend %absolute;
+    @include size(max-content, auto);
+
+    display: none;
+    list-style: none;
+    transition: 0.1s;
+    border: 2px solid $primary-color;
+    top: 100px;
+    right: 25px;
+    background-color: $white;
+    z-index: 2;
+    border-radius: 20px;
+  }
+
+  &__download-btn {
+    display: none;
+
+    z-index: 1;
+  }
+
+  &__item-wrapper {
+    font-size: $fs-xx-sm;
+    padding: 14px;
+    border-bottom: 1px solid $black;
+
+    &:last-child {
+      border-bottom: unset;
+    }
+  }
+
+  &__link {
+    color: $black;
+  }
 }
 
 @media screen and (min-width: 840px) {
@@ -42,35 +89,40 @@
     @include size(100%, auto);
 
     margin: auto;
-  }
 
-  .nav-download-btn {
-    display: block;
+    &__icon-menu,
+    &__toggle-menu {
+      display: none;
+    }
 
-    &:hover {
-      background-color: $secondary-color;
+    &__download-btn {
+      display: block;
+
+      &:hover {
+        background-color: $secondary-color;
+      }
+    }
+
+    &__list {
+      @include size(auto, auto);
+      @include flex-layout(
+        $justify: space-between,
+        $direction: row,
+        $gap: 10px
+      );
+
+      display: flex;
+      position: unset;
+      border: none;
+      max-width: 660px;
+      margin: unset;
+      background-color: transparent;
+    }
+
+    &__item-wrapper {
+      border-bottom: none;
+      padding: 0;
+      text-align: center;
     }
   }
-
-  .nav-list {
-    @include size(auto, auto);
-    @include flex-layout($justify: space-between, $direction: row, $gap: 10px);
-
-    display: flex;
-    position: unset;
-    border: none;
-    max-width: 660px;
-    margin: unset;
-    background-color: transparent;
-  }
-
-  .nav-item {
-    border-bottom: none;
-    padding: 0;
-    text-align: center;
-  }
-
-  // .nav-link:hover {
-  //   color: $secondary-color;
-  // }
 }

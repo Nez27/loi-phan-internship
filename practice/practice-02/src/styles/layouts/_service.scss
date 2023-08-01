@@ -22,29 +22,24 @@
   }
 
   &__img-container {
-    @include size(auto, 436.81px);
-
+    padding-top: 75px;
     position: relative;
-    padding-top: 80px;
-  }
-
-  &__background-img {
-    @extend %absolute;
-    @include set-location($top: 75px, $left: 0);
+    width: fit-content;
   }
 
   &__main-img {
     @extend %absolute;
-    @include set-location($top: 70px, $left: 35px);
+    @include set-location($top: 73px, $left: 35px);
   }
 
   &__vegetable-img {
     @extend %absolute;
     @include set-location($bottom: -10px, $left: 50px);
+    z-index: 4;
   }
 
   &__content {
-    margin-top: 65px;
+    margin-top: 61px;
     padding-inline: 24px;
 
     z-index: 1;
@@ -52,7 +47,6 @@
 
   &__heading {
     margin-top: 30px;
-    margin-inline: auto;
     font-size: $fs-xx-lg;
     line-height: 129.9%;
     font-weight: 700;
@@ -61,9 +55,7 @@
 
   &__description {
     margin-top: 29px;
-    margin-inline: auto;
     max-width: 381px;
-    font-size: $fs-md;
   }
 
   &__category {
@@ -88,19 +80,41 @@
   }
 
   &__name-category {
-    font-size: $fs-md;
     text-transform: capitalize;
   }
 
   &__btn {
-    display: block;
+    display: inline-block;
     margin-top: 43px;
-    max-width: 74px;
     text-transform: capitalize;
     padding: 10px 20px;
 
     &:hover {
       background-color: $secondary-color;
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .service {
+    max-width: $max-width;
+
+    &__main-img {
+      @include set-location($top: 30px, $left: 25px);
+    }
+
+    &__heading {
+      max-width: unset;
+    }
+
+    &__description {
+      max-width: 690px;
+    }
+
+    &__category {
+      @include flex-layout($direction: row, $gap: 10px);
+
+      margin-top: 29px;
     }
   }
 }
@@ -111,9 +125,6 @@
   }
 
   .service {
-    max-width: $max-width;
-    margin-inline: auto;
-
     &__container {
       @include flex-layout($align: center);
 
@@ -125,6 +136,7 @@
       @include size($width: 100%);
 
       max-width: 460px;
+      margin-inline: auto;
     }
 
     &__img-container {
@@ -151,28 +163,18 @@
     }
 
     &__main-img {
-      @include set-location($top: 95px, $left: 35px);
+      @include set-location($top: 55px, $left: 25px);
       @extend %absolute_840;
     }
 
     &__vegetable-img {
-      @include set-location($bottom: 145px, $left: 50px);
+      @include set-location($bottom: 180px, $left: 50px);
       @extend %absolute_840;
     }
 
     &__heading {
       max-width: 452px;
       margin: unset;
-    }
-
-    &__description {
-      max-width: 690px;
-    }
-
-    &__category {
-      @include flex-layout($direction: row, $gap: 10px);
-
-      margin-top: 29px;
     }
   }
 }
@@ -188,25 +190,31 @@
     }
 
     &__background-img {
-      @include set-location($top: 0px, $left: 0);
+      @include set-location($top: 0, $left: 0);
       @extend %absolute_1200;
     }
 
+    &__img-container {
+      margin-inline: unset;
+    }
+
     &__background-color {
-      @include set-location($left: -150px);
+      @include set-location($left: -151px);
       @include size(500px, 50%);
 
       border-radius: 50%;
       background: radial-gradient(
         circle,
-        rgba(253, 197, 94, 0.6),
-        rgba(253, 197, 94, 0.4),
+        rgba(253, 197, 94, 0.3),
         rgba(253, 197, 94, 0.2),
+        rgba(253, 197, 94, 0.1),
         rgba(253, 197, 94, 0.06),
         rgba(253, 197, 94, 0.01),
         rgba(253, 197, 94, 0),
         rgba(253, 197, 94, 0)
       );
+
+      clip-path: polygon(30% 0, 100% 0, 100% 100%, 30% 100%);
     }
 
     &__description {
@@ -230,8 +238,12 @@
     }
 
     &__content {
-      padding-top: 78px;
+      padding-top: 69px;
       padding-left: 29px;
+    }
+
+    &__btn {
+      margin-top: 26px;
     }
   }
 }

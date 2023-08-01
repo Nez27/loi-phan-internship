@@ -1,6 +1,7 @@
 .delivery-text-box {
   position: relative;
   display: inline-block;
+  font-size: $fs-xx-lg;
 }
 
 .welcome {
@@ -47,7 +48,7 @@
 
   &__food-img:nth-child(4) {
     @extend %absolute;
-    @include set-location($bottom: 0px, $right: 80px);
+    @include set-location($bottom: 0, $right: 80px);
   }
 
   &__food-img:nth-child(5) {
@@ -62,7 +63,7 @@
 
   &__rate-card {
     @extend %absolute;
-    @include set-location($top: 103px, $right: 0);
+    @include set-location($top: 103px, $right: -5px);
   }
 
   &__background-banner {
@@ -78,17 +79,19 @@
   &__arrow-img-up {
     @extend %absolute;
     @include set-location($top: -15px, $right: 40px);
+
+    z-index: -1;
   }
 
   &__mint-img {
     @extend %absolute;
-    @include set-location($bottom: 90px, $right: 0px);
+    @include set-location($bottom: 90px, $right: 0);
   }
   // End banner
 
   // Start content
   &__content {
-    @include size(calc(428px - 48px), auto);
+    @include size(380px, auto);
     @extend %d-flex;
     @include flex-layout($direction: column);
 
@@ -117,11 +120,11 @@
     border-radius: 100px;
     padding: 4px;
     margin-left: 10px;
-    font-size: $fs-xx-sm;
   }
 
   &__text-box-content {
     font-family: $secondary-font;
+    font-size: $fs-xx-sm;
   }
 
   &__icon-container {
@@ -139,20 +142,19 @@
   }
 
   &__heading {
-    margin-top: 12px;
+    margin-top: 16px;
     font-size: $fs-xx-lg;
     text-transform: capitalize;
     font-weight: 900;
-    max-width: 530px;
   }
 
   &__underline-img-container {
     @extend %absolute;
-    @include set-location($bottom: -27px, $left: 0px);
+    @include set-location($bottom: -15px, $left: 0);
   }
 
   &__description {
-    margin-top: 40px;
+    margin-top: 36px;
     font-size: $fs-x-md;
     line-height: 140%;
     letter-spacing: -0.2px;
@@ -162,7 +164,7 @@
   &__search-form {
     @extend %d-flex;
 
-    margin-top: 32px;
+    margin-top: 30px;
     border-radius: 100px;
     border: 0.5px solid $black;
     max-width: 471px;
@@ -177,7 +179,6 @@
   &__text-input {
     @include size(100%, auto);
 
-    font-size: $fs-md;
     border: none;
 
     &:focus {
@@ -269,6 +270,68 @@
   display: none;
 }
 
+@media screen and (min-width: 600px) {
+  .welcome {
+    &__container {
+      max-width: unset;
+    }
+
+    &__banner-container {
+      width: unset;
+    }
+
+    &__main-image {
+      margin-inline: auto;
+      position: relative;
+      padding-left: 50px;
+    }
+
+    &__food-img:nth-child(2) {
+      @extend %absolute;
+      @include set-location($bottom: 75px, $left: 14px);
+    }
+
+    &__food-img:nth-child(3) {
+      @extend %absolute;
+      @include set-location($bottom: -7px, $left: 105px);
+    }
+
+    &__food-img:nth-child(4) {
+      @extend %absolute;
+      @include set-location($bottom: 0, $right: 80px);
+    }
+
+    &__food-img:nth-child(5) {
+      @extend %absolute;
+      @include set-location($bottom: 85px, $right: 15px);
+    }
+
+    &__review-card {
+      @extend %absolute;
+      @include set-location($top: 100px, $left: 10px);
+    }
+
+    &__rate-card {
+      @extend %absolute;
+      @include set-location($top: 103px, $right: 0);
+    }
+
+    &__content {
+      width: unset;
+      padding-inline: unset;
+      padding-left: 24px;
+    }
+
+    &__underline-img-container {
+      @include set-location($bottom: 0px, $left: 0);
+    }
+
+    &__underline-img {
+      width: 180px;
+    }
+  }
+}
+
 @media screen and (min-width: 840px) {
   .welcome {
     &__container {
@@ -284,11 +347,16 @@
     }
 
     // Start content
+
+    &__head-arrow-container {
+      display: none;
+    }
+
     &__content {
       @include size(auto, auto);
 
       padding-left: 70px;
-      padding-right: 0px;
+      padding-right: 0;
       padding-top: 70px;
       max-width: 560px;
     }
@@ -304,8 +372,12 @@
       line-height: 125%;
     }
 
+    &__underline-img {
+      width: unset;
+    }
+
     &__underline-img-container {
-      @include set-location($bottom: -25px, $left: 8px);
+      @include set-location($bottom: -10px, $left: 8px);
     }
 
     &__description {
@@ -346,7 +418,7 @@
 
 @media screen and (min-width: 1200px) {
   .welcome {
-    padding-top: 0px;
+    padding-top: 0;
 
     // Start banner
     &__banner {
@@ -374,11 +446,11 @@
     }
 
     &__lines-background {
-      @include set-location($top: -85px, $right: -98px);
+      @include set-location($top: -85px, $right: -96px);
     }
 
     &__review-card {
-      @include set-location($top: 160px, $left: -47px);
+      @include set-location($top: 160px, $left: 1px);
     }
 
     &__rate-card {
@@ -386,11 +458,11 @@
     }
 
     &__food-img:nth-child(2) {
-      @include set-location($bottom: 108px, $left: -68px);
+      @include set-location($bottom: 108px, $left: -18px);
     }
 
     &__food-img:nth-child(3) {
-      @include set-location($bottom: -29px, $left: 102);
+      @include set-location($bottom: -29px, $left: 151px);
     }
 
     &__food-img:nth-child(4) {
@@ -411,8 +483,16 @@
       padding-top: 81px;
     }
 
+    &__heading {
+      max-width: 530px;
+    }
+
     &__text-box {
       padding-left: 1px;
+    }
+
+    .delivery-text-box {
+      font-size: $fs-xxx-lg;
     }
 
     &__description {

@@ -15,7 +15,7 @@
 
   &__dot-background {
     @extend %absolute;
-    @include set-location($top: 168px, $left: 0px);
+    @include set-location($top: 168px, $left: 0);
 
     display: none;
   }
@@ -27,7 +27,6 @@
   }
 
   &__description {
-    font-size: $fs-md;
     font-weight: 400;
     text-transform: capitalize;
     text-align: center;
@@ -60,7 +59,7 @@
   }
 }
 
-@media screen and (min-width: 840px) {
+@media screen and (min-width: 600px) {
   .offer {
     max-width: $max-width;
 
@@ -77,6 +76,10 @@
       );
 
       row-gap: 30px;
+    }
+
+    &__description {
+      padding-inline: 24px;
     }
   }
 }

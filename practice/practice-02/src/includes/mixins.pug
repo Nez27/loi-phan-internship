@@ -1,19 +1,19 @@
-- var avatar_img_path = "./assets/images/avatar/";
+- var common_img_path = "./assets/images/common/";
 
 mixin foodItemCard(food)
-  .card-item
-    img.card-img(src=offer_img_path + "item-card.png", alt="Item card image")
-    img.food-image(src=food.imageUrl, alt=food.name + " image")
-    span.price= food.price + "$"
-    .content-card
-      .rate
-        .avatar-container
+  .card
+    img.card__img(src=common_img_path + "item-card.png", alt="Item card image")
+    img.card__food-image(src=food.imageUrl, alt=food.name + " image")
+    span.card__price= food.price + "$"
+    .card__content
+      .card__rate
+        .card__avatar-container
           if food.avatarImageList && food.avatarImageList.length > 0
             each avatar, index in food.avatarImageList 
-              img.avatar(src=avatar.avatarUrl, alt="Avatar user rate")
-        .star-container
-          img(src=offer_img_path + "star.png", alt="Star image")
-        span.rate-point= "(" + food.ratePoint + ")"
-      p.food-name= food.foodName
-      p.food-description= food.foodDescription
-    a.order-btn.btn(href="javascript:void(0)") Order now
+              img.card__avatar(src=avatar.avatarUrl, alt="Avatar user rate")
+        .card__star-container
+          img(src=common_img_path + "star.png", alt="Star image")
+        span.card__rate-point= "(" + food.ratePoint + ")"
+      p.card__food-name= food.foodName
+      p.card__food-description= food.foodDescription
+    a.card__order-btn.btn(href="javascript:void(0)") Order now

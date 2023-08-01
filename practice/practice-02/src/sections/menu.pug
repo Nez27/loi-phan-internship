@@ -1,19 +1,21 @@
-- var image_menu_path = "./assets/images/menu/";
-- var list_category = ["Ramen", "Breakfast", "Lunch", "Dinner", "Maxican", "Italian", "Desserts", "Drinks"];
-- var list_image_food = ["./assets/images/offer/food-1.png", image_menu_path + "food-2.png", image_menu_path + "food-3.png", image_menu_path + "food-4.png", image_menu_path + "food-5.png", image_menu_path + "food-6.png", image_menu_path + "food-7.png", image_menu_path + "food-8.png"];
-- var default_food_data = { price: "10", ratePoint: "4.5", foodName: "Kebab", foodDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry", avatarImageList: [{ avatarUrl: avatar_img_path + "avatar-1.png" }, { avatarUrl: avatar_img_path + "avatar-2.png" }, { avatarUrl: avatar_img_path + "avatar-3.png" }] };
+- var avatar_img_path = './assets/images/avatar/';
+- var food_img_path = './assets/images/food/';
+
+- var list_category = ['Ramen', 'Breakfast', 'Lunch', 'Dinner', 'Maxican', 'Italian', 'Desserts', 'Drinks'];
+- var list_image_food = [food_img_path + 'food-1.png', food_img_path + 'food-2.png', food_img_path + 'food-3.png', food_img_path + 'food-4.png', food_img_path + 'food-5.png', food_img_path + 'food-6.png', food_img_path + 'food-7.png', food_img_path + 'food-8.png'];
+- var default_food_data = { price: '10', ratePoint: '4.5', foodName: 'Kebab', foodDescription: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', avatarImageList: [{ avatarUrl: avatar_img_path + 'avatar-1.png' }, { avatarUrl: avatar_img_path + 'avatar-2.png' }, { avatarUrl: avatar_img_path + 'avatar-3.png' }] };
 
 section.menu
   .menu__container
     h2.menu__heading
-      span.primary-text Menu
-      = " That "
-      span.secondary-text Always
-      = " Make You Fall In "
-      span.primary-text Love
+      span.text--primary Menu
+      = ' That '
+      span.text--secondary Always
+      = ' Make You Fall In '
+      span.text--primary Love
     .menu__list-category
       each item in list_category
-        a.menu__category-item.link-text(href="javascript:void(0)")= item
+        a.menu__category-item.link-text(href='javascript:void(0)')= item
     .menu__card-list
       each url in list_image_food
         - var image_food = { imageUrl: url };
