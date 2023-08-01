@@ -34,10 +34,10 @@
 
 - Timeline:
   - Estimate: 6 days
-  - Actual: 12 days.
+  - Actual: 13 days.
   - Calendar:
     - Start: 2023/07/13
-    - End: ...
+    - End: 2023/08/01
 
 ## Development Environment
 
@@ -48,9 +48,9 @@
 
 - Step 1: Clone repository.
   - With HTTPS:
-    - `$ git clone https://github.com/phuocduong-agilityio/loi-phan-internship.git`.
+    - `$ git clone https://github.com/Nez27/loi-phan-internship.git`.
 - Step 2: Move to folder which just cloned in your computer.
-  - `cd ./internship-loi-phan`.
+  - `cd ./loi-phan-internship`.
 - Step 3: Move it to branch html-css-practice-two.
   - `$ git checkout html-css-practice-two`.
 - Step 4: Move to folder practice-02.
