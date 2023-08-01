@@ -2,7 +2,7 @@
   @extend %absolute;
   @include set-location($top: 0, $right: 0, $left: 0);
 
-  min-width: 428px;
+  width: 428px;
   margin: auto;
 }
 
@@ -19,6 +19,12 @@
 .header__content {
   @extend %d-flex;
   @include flex-layout($justify: space-between);
+}
+
+@media screen and (min-width: 600px) {
+  .header {
+    width: auto;
+  }
 }
 
 @media screen and (min-width: 840px) {

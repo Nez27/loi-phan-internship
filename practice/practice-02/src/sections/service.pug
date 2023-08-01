@@ -1,4 +1,4 @@
-- var service_img_path = "./assets/images/service/";
+- var service_img_path = './assets/images/service/';
 - var list_service_category_1 = [{url_icon : service_img_path + "icon-1.png", content: "Online order"}, {url_icon : service_img_path + "icon-3.png", content: "Pre-Reservation"}, {url_icon : service_img_path + "icon-3.png", content: "Super chef"}];
 - var list_service_category_2 = [{url_icon : service_img_path + "icon-2.png", content: "24/7 Service"}, {url_icon : service_img_path + "icon-3.png", content: "Oragonized foodhut place"}, {url_icon : service_img_path + "icon-3.png", content: "Clean Kitchen"}];
 - var list_service_category = [list_service_category_1, list_service_category_2];
@@ -9,38 +9,42 @@ section.service
     .service__img-container
       picture
         source(
-          media="(min-width: 1200px)",
-          srcset=service_img_path + "background-desktop.png"
+          media='(min-width: 1200px)',
+          srcset=service_img_path + 'background-desktop.png'
+        )
+        source(
+          media='(min-width: 600px)',
+          srcset=service_img_path + 'background-tablet.png'
         )
         img.service__background-img(
-          src=service_img_path + "background-mobile.png",
-          alt="Background image"
+          src=service_img_path + 'background-mobile.png',
+          alt='Background image'
         )
       picture
         source(
-          media="(min-width: 1200px)",
-          srcset=service_img_path + "main-character-desktop.png"
+          media='(min-width: 1200px)',
+          srcset=service_img_path + 'main-character-desktop.png'
         )
         img.service__main-img(
-          src=service_img_path + "main-character-mobile.png",
-          alt="Main character image"
+          src=service_img_path + 'main-character-mobile.png',
+          alt='Main character image'
         )
       picture
         source(
-          media="(min-width: 1200px)",
-          srcset=service_img_path + "vegetable-desktop.png"
+          media='(min-width: 1200px)',
+          srcset=service_img_path + 'vegetable-desktop.png'
         )
         img.service__vegetable-img(
-          src=service_img_path + "vegetable-mobile.png",
-          alt="Vegetable background image"
+          src=service_img_path + 'vegetable-mobile.png',
+          alt='Vegetable background image'
         )
     .service__content
       h2.service__heading We are
-        = " "
-        span.primary-text more
-        = " than "
-        span.secondary-text multiple
-        = " service"
+        = ' '
+        span.text--primary more
+        = ' than '
+        span.text--secondary multiple
+        = ' service'
       p.service__description This is a type of resturent which typically serves food and drink, in addition to light refreshments such as baked goods or snacks. The term comes frome the rench word meaning food
       .service__category
         each list in list_service_category
@@ -49,7 +53,7 @@ section.service
               .service__category-item
                 img.service__icon-category(
                   src=item.url_icon,
-                  alt="Icon category"
+                  alt='Icon category'
                 )
                 p.service__name-category= item.content
-      a.service__btn.btn(href="javascript:void(0)") About us
+      a.service__btn.btn(href='javascript:void(0)') About us
