@@ -169,11 +169,20 @@
       @include set-location($top: 20px, $right: 107px);
     }
 
-    &__image-food:first-child,
-    &__image-food:nth-child(2),
-    &__image-food:nth-child(3),
+    &__image-food:first-child {
+      @include set-location($bottom: -70px, $right: 270px);
+    }
+
+    &__image-food:nth-child(2) {
+      @include set-location($bottom: -40px, $right: 190px);
+    }
+
+    &__image-food:nth-child(3) {
+      @include set-location($bottom: 0px, $right: 130px);
+    }
+
     &__image-food:nth-child(4) {
-      display: none;
+      @include set-location($bottom: 70px, $right: 89px);
     }
 
     &__content {
