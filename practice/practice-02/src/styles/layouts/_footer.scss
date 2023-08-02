@@ -8,7 +8,6 @@
 
     padding-top: 116px;
     padding-left: 24px;
-    max-width: 428px;
   }
 
   &__brand-name {
@@ -117,7 +116,6 @@
     &__container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      max-width: $max-width;
       width: auto;
       column-gap: 10px;
       padding-inline: 10px;

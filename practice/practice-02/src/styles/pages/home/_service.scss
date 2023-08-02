@@ -1,5 +1,4 @@
 .service {
-  max-width: 428px;
   margin-inline: auto;
 
   &__container {
@@ -97,8 +96,6 @@
 
 @media screen and (min-width: 600px) {
   .service {
-    max-width: $max-width;
-
     &__img-container {
       margin-inline: auto;
     }

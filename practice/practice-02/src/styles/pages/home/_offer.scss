@@ -1,6 +1,5 @@
 .offer {
   position: relative;
-  max-width: 428px;
   margin-inline: auto;
 
   &__container {
@@ -61,10 +60,8 @@
 
 @media screen and (min-width: 600px) {
   .offer {
-    max-width: $max-width;
-
     &__container {
-      max-width: $max-width;
+      max-width: unset;
     }
 
     &__card-list {

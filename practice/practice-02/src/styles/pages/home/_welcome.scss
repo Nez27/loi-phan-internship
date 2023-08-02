@@ -18,13 +18,11 @@
     @include flex-layout($justify: center, $direction: column);
 
     margin: auto;
-    max-width: 428px;
     padding-top: 67px;
   }
   // Start banner
   &__banner-container {
     @extend %d-flex;
-    @include size(428px, auto);
     @include flex-layout($justify: center, $direction: column);
 
     position: relative;
@@ -343,7 +341,6 @@
 
       padding-top: 130px;
       width: 100%;
-      max-width: $max-width;
     }
 
     // Start content

@@ -1,6 +1,5 @@
 .platform {
   &__container {
-    max-width: 428px;
     margin-inline: auto;
     padding-top: 26px;
     padding-bottom: 58px;
@@ -82,7 +81,6 @@
 @media screen and (min-width: 600px) {
   .platform {
     &__container {
-      max-width: $max-width;
     }
 
     &__image-container {
