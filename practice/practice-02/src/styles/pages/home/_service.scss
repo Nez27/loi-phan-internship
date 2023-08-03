@@ -21,9 +21,10 @@
   }
 
   &__img-container {
+    @include size(406px, 405px);
+
     padding-top: 75px;
     position: relative;
-    width: fit-content;
   }
 
   &__main-img {

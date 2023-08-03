@@ -4,56 +4,57 @@
 - var list_service_category = [list_service_category_1, list_service_category_2];
 
 section.service
-  .service__container
-    .service__background-color
-    .service__img-container
-      picture
-        source(
-          media='(min-width: 1200px)',
-          srcset=service_img_path + 'background-desktop.png'
-        )
-        source(
-          media='(min-width: 600px)',
-          srcset=service_img_path + 'background-tablet.png'
-        )
-        img.service__background-img(
-          src=service_img_path + 'background-mobile.png',
-          alt='Background image'
-        )
-      picture
-        source(
-          media='(min-width: 1200px)',
-          srcset=service_img_path + 'main-character-desktop.png'
-        )
-        img.service__main-img(
-          src=service_img_path + 'main-character-mobile.png',
-          alt='Main character image'
-        )
-      picture
-        source(
-          media='(min-width: 1200px)',
-          srcset=service_img_path + 'vegetable-desktop.png'
-        )
-        img.service__vegetable-img(
-          src=service_img_path + 'vegetable-mobile.png',
-          alt='Vegetable background image'
-        )
-    .service__content
-      h2.service__heading We are
-        = ' '
-        span.text--primary more
-        = ' than '
-        span.text--secondary multiple
-        = ' service'
-      p.service__description This is a type of resturent which typically serves food and drink, in addition to light refreshments such as baked goods or snacks. The term comes frome the rench word meaning food
-      .service__category
-        each list in list_service_category
-          .service__category-list
-            each item in list
-              .service__category-item
-                img.service__icon-category(
-                  src=item.url_icon,
-                  alt='Icon category'
-                )
-                p.service__name-category= item.content
-      a.service__btn.btn(href='javascript:void(0)') About us
+  .wrapper
+    .service__container
+      .service__background-color
+      .service__img-container
+        picture
+          source(
+            media='(min-width: 1200px)',
+            srcset=service_img_path + 'background-desktop.png'
+          )
+          source(
+            media='(min-width: 600px)',
+            srcset=service_img_path + 'background-tablet.png'
+          )
+          img.service__background-img(
+            src=service_img_path + 'background-mobile.png',
+            alt='Background image'
+          )
+        picture
+          source(
+            media='(min-width: 1200px)',
+            srcset=service_img_path + 'main-character-desktop.png'
+          )
+          img.service__main-img(
+            src=service_img_path + 'main-character-mobile.png',
+            alt='Main character image'
+          )
+        picture
+          source(
+            media='(min-width: 1200px)',
+            srcset=service_img_path + 'vegetable-desktop.png'
+          )
+          img.service__vegetable-img(
+            src=service_img_path + 'vegetable-mobile.png',
+            alt='Vegetable background image'
+          )
+      .service__content
+        h2.service__heading We are
+          = ' '
+          span.text--primary more
+          = ' than '
+          span.text--secondary multiple
+          = ' service'
+        p.service__description This is a type of resturent which typically serves food and drink, in addition to light refreshments such as baked goods or snacks. The term comes frome the rench word meaning food
+        .service__category
+          each list in list_service_category
+            .service__category-list
+              each item in list
+                .service__category-item
+                  img.service__icon-category(
+                    src=item.url_icon,
+                    alt='Icon category'
+                  )
+                  p.service__name-category= item.content
+        a.service__btn.btn(href='javascript:void(0)') About us

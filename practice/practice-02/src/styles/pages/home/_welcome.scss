@@ -24,6 +24,7 @@
   &__banner-container {
     @extend %d-flex;
     @include flex-layout($justify: center, $direction: column);
+    @include size(428px, 417px);
 
     position: relative;
   }
@@ -275,10 +276,12 @@
     }
 
     &__banner-container {
-      width: unset;
+      @include size(auto, auto);
     }
 
     &__main-image {
+      @include size(355px, 417px);
+
       margin-inline: auto;
       position: relative;
       padding-left: 50px;
@@ -427,6 +430,8 @@
     }
 
     &__main-image {
+      @include size(570px, 655px);
+
       padding-right: 29px;
     }
 

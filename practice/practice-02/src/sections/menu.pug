@@ -6,18 +6,19 @@
 - var default_food_data = { price: '10', ratePoint: '4.5', foodName: 'Kebab', foodDescription: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', avatarImageList: [{ avatarUrl: avatar_img_path + 'avatar-1.png' }, { avatarUrl: avatar_img_path + 'avatar-2.png' }, { avatarUrl: avatar_img_path + 'avatar-3.png' }] };
 
 section.menu
-  .menu__container
-    h2.menu__heading
-      span.text--primary Menu
-      = ' That '
-      span.text--secondary Always
-      = ' Make You Fall In '
-      span.text--primary Love
-    .menu__list-category
-      each item in list_category
-        a.menu__category-item.link-text(href='javascript:void(0)')= item
-    .menu__card-list
-      each url in list_image_food
-        - var image_food = { imageUrl: url };
+  .wrapper
+    .menu__container
+      h2.menu__heading
+        span.text--primary Menu
+        = ' That '
+        span.text--secondary Always
+        = ' Make You Fall In '
+        span.text--primary Love
+      .menu__list-category
+        each item in list_category
+          a.menu__category-item.link-text(href='javascript:void(0)')= item
+      .menu__card-list
+        each url in list_image_food
+          - var image_food = { imageUrl: url };
 
-        +foodItemCard({ ...image_food, ...default_food_data })
+          +foodItemCard({ ...image_food, ...default_food_data })

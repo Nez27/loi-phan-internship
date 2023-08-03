@@ -9,24 +9,25 @@
 - var list_food = [food_1, food_2, food_3, food_4];
 
 section.offer
-  .offer__container
-    .offer__dot-background
-      img(
-        src=offer_img_path + 'dot-background.png',
-        alt='Dot background image'
-      )
-    h2.offer__heading Today
-      = ' '
-      span.text--primary Special
-      = ' Offers'
-    p.offer__description Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-    .offer__card-list
-      each val in list_food
-        +foodItemCard(val)
-  .offer__rosemary-container
-    picture
-      source(
-        media='(min-width: 840px)',
-        srcset=offer_img_path + 'rosemary-desktop.png'
-      )
-      img(src=offer_img_path + 'rosemary-mobile.png', alt='Rosemary image')
+  .wrapper
+    .offer__container
+      .offer__dot-background
+        img(
+          src=offer_img_path + 'dot-background.png',
+          alt='Dot background image'
+        )
+      h2.offer__heading Today
+        = ' '
+        span.text--primary Special
+        = ' Offers'
+      p.offer__description Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+      .offer__card-list
+        each val in list_food
+          +foodItemCard(val)
+    .offer__rosemary-container
+      picture
+        source(
+          media='(min-width: 840px)',
+          srcset=offer_img_path + 'rosemary-desktop.png'
+        )
+        img(src=offer_img_path + 'rosemary-mobile.png', alt='Rosemary image')

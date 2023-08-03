@@ -4,7 +4,7 @@
 
 .card {
   @extend %d-flex, %align-center-col;
-  @include size(auto, 516px);
+  @include size(310px, 516px);
 
   position: relative;
 
